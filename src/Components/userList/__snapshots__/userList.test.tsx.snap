@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly App component 1`] = `
+<div
+  className="container"
+>
+  <table
+    className="table table-light mt-2"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          scope="col"
+        >
+          Email
+        </th>
+        <th
+          scope="col"
+          style={
+            Object {
+              "width": "30%",
+            }
+          }
+        >
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      key="0"
+    >
+      <tr>
+        <td />
+        <td />
+        <td>
+          <Button
+            className="mx-2 mt-1 text-white"
+            color="info"
+            tag="button"
+          >
+            View User
+          </Button>
+          <Button
+            className="mx-2 mt-1"
+            color="primary"
+            tag="button"
+          >
+            Edit User
+          </Button>
+          <Button
+            className="mx-2 mt-1"
+            color="danger"
+            tag="button"
+          >
+            Delete User
+          </Button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

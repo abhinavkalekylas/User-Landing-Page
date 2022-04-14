@@ -1,18 +1,17 @@
-import React from "react";
+import "./Navbar.css"
 
 const Navbar = () => {
   return (
     <nav
-      style={{ width: "100%" }}
-      className="navbar navbar-dark bg-dark justify-content-between mt-2"
+      className="navbar navbar-dark"
     >
-      <a href="/" className="navbar-brand mx-3">
+      <a href="/" className="navbar-brand ">
         User Landing Page
       </a>
 
-      <form className="form-inline d-flex flex-row">
+      <form className="form-inline">
         <select
-          className="form-select form-select-lg my-1"
+          className="form-select form-select-lg"
           aria-label=".form-select-lg example"
         >
           <option value="none">None</option>
@@ -21,12 +20,10 @@ const Navbar = () => {
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
-        <div className="h-3 w-40">
+        <div className="adduser">
           <button
             color="success"
-            className="btn btn-success btn-outline-light mx-3 my-1"
-            style={{ width: 120, height: 45 }}
-            // to="/"
+            className="btn btn-success btn-outline-light"
           >
             Add User
           </button>

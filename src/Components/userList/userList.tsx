@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
-
 import axios from "axios";
+import "./userList.css"
 
-const User = () => {
+const UserList = () => {
   // All users state
   const [users, setUsers] = useState([
     {
-        id: 0,
+      id: 0,
       name: "",
       email: "",
       gender: "",
       status: "",
     },
   ]);
-
 
   useEffect(() => {
     getAllUsers();
@@ -32,11 +31,8 @@ const User = () => {
         },
       });
 
-      //   console.log(res);
-
       // Contains all users data
-      const data: {id:number,name:string,email:string,gender:string,status:string}[] = Array.from(res.data);
-      //   console.log(data);
+      const data: {id:number,name:string,email:string,gender:string,status:string}[] = res.data;
 
       // Update users
       setUsers(data);
@@ -47,12 +43,12 @@ const User = () => {
 
   return (
     <div className="container">
-      <table style={{ width: "100%" }} className="table table-light mt-2">
+      <table className="table table-light">
         <thead>
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th style={{ width: "30%" }} scope="col">
+            <th className="action" scope="col">
               Actions
             </th>
           </tr>
@@ -60,31 +56,32 @@ const User = () => {
         {users.length === 0 ? (
           <h1>List is empty</h1>
         ) : (
-          users.map((user) => {
+          <tbody >
+          {users.map((user) => {
             return (
-              <tbody key={String(user.id)}>
-                <tr>
+                <tr key={String(user.id)}>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                    <Button color="info" className="mx-2 mt-1 text-white">
+                    <Button color="info" className="view-button text-white">
                       View User
                     </Button>
-                    <Button color="primary" className="mx-2 mt-1">
+                    <Button color="primary" className="edit-button">
                       Edit User
                     </Button>
-                    <Button color="danger" className="mx-2 mt-1">
+                    <Button color="danger" className="delete-button">
                       Delete User
                     </Button>
                   </td>
                 </tr>
-              </tbody>
             );
-          })
+          })}
+        </tbody>
+
         )}
       </table>
     </div>
   );
 };
 
-export default User;
+export default UserList;

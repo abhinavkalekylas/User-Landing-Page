@@ -1,15 +1,26 @@
-import { render, screen } from "@testing-library/react";
 import App from "./App";
 import Navbar from "./Components/navbar/Navbar";
-// import { shallow } from "enzyme";
+import UserList from "./Components/userList/userList";
+import { shallow, mount } from "enzyme";
+import toJson from 'enzyme-to-json';
 
-describe("User Landing Main Page", () => {
-  test("check title of the page", () => {
-    // const wrapper = shallow(<App />);
-    // console.log(wrapper.debug());
-
-    //Todo
-    //check all component is there or not
-    // expect(wrapper.find("<Navbar />").text()).toBe("<Navbar />");
-  });
+it('renders correctly App component', () => {
+  const wrapper = shallow(<App />)
+  expect(toJson(wrapper)).toMatchSnapshot();
 });
+
+describe('check inner component renders', () => {
+  it('check Navbar component', () => {
+    const wrapper = mount(<App />)
+    expect(wrapper).toContainReact(<Navbar />);
+  })
+  
+  it('check User componet', () => {
+    const wrapper = mount(<App />)
+    expect(wrapper).toContainReact(<UserList />);
+  })
+})
+
+
+
+

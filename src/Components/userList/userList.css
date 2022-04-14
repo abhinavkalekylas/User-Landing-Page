@@ -1,0 +1,26 @@
+.view-button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.edit-button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.delete-button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.action {
+    width: 30%;
+}

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly App component 1`] = `
+<BrowserRouter>
+  <div
+    className="container"
+  >
+    <Navbar />
+    <User />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`renders correctly enzyme 1`] = `
+<BrowserRouter>
+  <div
+    className="container"
+  >
+    <Navbar />
+    <User />
+  </div>
+</BrowserRouter>
+`;

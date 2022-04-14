@@ -77,7 +77,6 @@ const UserList = () => {
             );
           })}
         </tbody>
-
         )}
       </table>
     </div>

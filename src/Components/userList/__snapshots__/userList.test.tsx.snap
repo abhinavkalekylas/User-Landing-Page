@@ -4,68 +4,6 @@ exports[`renders correctly App component 1`] = `
 <div
   className="container"
 >
-  <table
-    className="table table-light"
-  >
-    <thead>
-      <tr>
-        <th
-          className="title_name"
-          scope="col"
-        >
-          Name
-        </th>
-        <th
-          scope="col"
-        >
-          Email
-        </th>
-        <th
-          className="action"
-          scope="col"
-        >
-          Actions
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="table_row"
-        key="0"
-      >
-        <td
-          className="user_name"
-        />
-        <td
-          className="user_email"
-        />
-        <td
-          className="action_buttons"
-        >
-          <Button
-            className="view-button text-white"
-            color="info"
-            tag="button"
-          >
-            View User
-          </Button>
-          <Button
-            className="edit-button"
-            color="primary"
-            tag="button"
-          >
-            Edit User
-          </Button>
-          <Button
-            className="delete-button"
-            color="danger"
-            tag="button"
-          >
-            Delete User
-          </Button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <Loader />
 </div>
 `;

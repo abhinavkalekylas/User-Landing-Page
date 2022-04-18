@@ -16,16 +16,11 @@ const UserList = () => {
       status: "",
     },
   ]);
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    getAllUsers();
-  }, []);
 
   const getAllUsers = async () => {
     try {
-      setLoad(true);
       const token =
         "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
       const res = await axios("https://gorest.co.in/public/v2/users", {
@@ -48,6 +43,10 @@ const UserList = () => {
       console.log("Error while getting all users ", error); 
     }
   };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
   return (
     <div className="container">

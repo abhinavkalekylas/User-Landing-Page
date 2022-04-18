@@ -1,26 +1,42 @@
 .view-button {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
 }
 
 .edit-button {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
 }
 
 .delete-button {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
 }
 
 table {
     width: 100%;
     margin-top: 1rem;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    
 }
 
 .action {
     width: 30%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.user_name, .title_name {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+
+.action_buttons {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }

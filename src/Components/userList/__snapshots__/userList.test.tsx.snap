@@ -5,16 +5,12 @@ exports[`renders correctly App component 1`] = `
   className="container"
 >
   <table
-    className="table table-light mt-2"
-    style={
-      Object {
-        "width": "100%",
-      }
-    }
+    className="table table-light"
   >
     <thead>
       <tr>
         <th
+          className="title_name"
           scope="col"
         >
           Name
@@ -25,40 +21,43 @@ exports[`renders correctly App component 1`] = `
           Email
         </th>
         <th
+          className="action"
           scope="col"
-          style={
-            Object {
-              "width": "30%",
-            }
-          }
         >
           Actions
         </th>
       </tr>
     </thead>
-    <tbody
-      key="0"
-    >
-      <tr>
-        <td />
-        <td />
-        <td>
+    <tbody>
+      <tr
+        className="table_row"
+        key="0"
+      >
+        <td
+          className="user_name"
+        />
+        <td
+          className="user_email"
+        />
+        <td
+          className="action_buttons"
+        >
           <Button
-            className="mx-2 mt-1 text-white"
+            className="view-button text-white"
             color="info"
             tag="button"
           >
             View User
           </Button>
           <Button
-            className="mx-2 mt-1"
+            className="edit-button"
             color="primary"
             tag="button"
           >
             Edit User
           </Button>
           <Button
-            className="mx-2 mt-1"
+            className="delete-button"
             color="danger"
             tag="button"
           >

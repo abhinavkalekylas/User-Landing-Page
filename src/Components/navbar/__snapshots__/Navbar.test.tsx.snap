@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly App component 1`] = `
+<nav
+  className="navbar navbar-dark"
+>
+  <a
+    className="navbar-brand "
+    href="/"
+  >
+    User Landing Page
+  </a>
+  <form
+    className="form-inline"
+  >
+    <select
+      aria-label=".form-select-lg example"
+      className="form-select form-select-lg"
+    >
+      <option
+        value="none"
+      >
+        None
+      </option>
+      <option
+        value="active"
+      >
+        Active
+      </option>
+      <option
+        value="inactive"
+      >
+        Inactive
+      </option>
+      <option
+        value="male"
+      >
+        Male
+      </option>
+      <option
+        value="female"
+      >
+        Female
+      </option>
+    </select>
+    <div
+      className="adduser"
+    >
+      <button
+        className="btn btn-success btn-outline-light"
+        color="success"
+      >
+        Add User
+      </button>
+    </div>
+  </form>
+</nav>
+`;

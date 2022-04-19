@@ -11,12 +11,6 @@ body {
   background-color: rgb(104, 104, 104);
 }
 
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  color: aliceblue;
-}
-
 nav {
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }

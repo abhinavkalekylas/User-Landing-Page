@@ -1,11 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from "./App";
+import Navbar from "./Components/navbar/Navbar";
+import UserList from "./Components/userList/userList";
+import { shallow, mount } from "enzyme";
+import toJson from 'enzyme-to-json';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('renders correctly App component', () => {
+  const wrapper = mount(<App />)
+  expect(toJson(wrapper)).toMatchSnapshot();
 });
+
+
 
 

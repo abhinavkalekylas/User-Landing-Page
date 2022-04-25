@@ -1,6 +1,13 @@
+import { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import "./Navbar.css"
+import Modaldata from "../modal/Modaldata"
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
   return (
     <nav
       className="navbar navbar-dark"
@@ -21,14 +28,16 @@ const Navbar = () => {
           <option value="female">Female</option>
         </select>
         <div className="adduser">
-          <button
+          <Button
             color="success"
             className="btn btn-success btn-outline-light"
+            onClick={handleShow}
           >
             Add User
-          </button>
+          </Button>
         </div>
       </form>
+      <Modaldata showModal={showModal} handleClose={handleClose} />
     </nav>
   );
 };

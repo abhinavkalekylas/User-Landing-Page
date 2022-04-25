@@ -3,6 +3,7 @@ import { Button } from "reactstrap";
 import axios from "axios";
 import "./userList.css"
 import Loader from "../loader/Loader"
+import Viewuser from "../viewuser/Viewuser";
 
 
 const UserList = () => {
@@ -18,6 +19,17 @@ const UserList = () => {
   ]);
   const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [userput, setUserput] = useState({
+    name: "",
+    email: "",
+    gender: "",
+    status: "",
+  });
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
   const getAllUsers = async () => {
     try {
@@ -73,9 +85,17 @@ const UserList = () => {
                   <td className="user_name">{user.name}</td>
                   <td className="user_email">{user.email}</td>
                   <td className="action_buttons">
-                    <Button color="info" className="view-button text-white">
+                    <Button onClick={() =>{
+                        handleShow();
+                        setUserput(user);
+                      }} color="info" className="view-button text-white">
                       View User
                     </Button>
+                    <Viewuser
+                      userData={userput}
+                      showModal={showModal}
+                      handleClose={handleClose}
+                    />
                     <Button color="primary" className="edit-button">
                       Edit User
                     </Button>

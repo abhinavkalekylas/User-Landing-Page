@@ -1,3 +1,8 @@
-h2, h4, h6 {
+h2, h4, h6,.title {
     color:black;
+    margin-top: 1rem;
+}
+
+.modal-backdrop.show {
+    opacity: 0.11;
 }

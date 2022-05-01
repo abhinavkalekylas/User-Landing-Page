@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import "./Navbar.css"
-import Modaldata from "../modal/Modaldata"
+import { Button } from "react-bootstrap";
+import "./Navbar.css";
+import Modaldata from "../modal/Modaldata";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -9,14 +9,12 @@ const Navbar = () => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
   return (
-    <nav
-      className="navbar navbar-dark"
-    >
+    <nav className="navbar navbar-dark">
       <a href="/" className="navbar-brand ">
         User Landing Page
       </a>
 
-      <form className="form-inline">
+      <form className="filter form-inline">
         <select
           className="form-select form-select-lg"
           aria-label=".form-select-lg example"
@@ -30,7 +28,7 @@ const Navbar = () => {
         <div className="adduser">
           <Button
             color="success"
-            className="btn btn-success btn-outline-light"
+            className="btn_add btn btn-success btn-outline-light"
             onClick={handleShow}
           >
             Add User

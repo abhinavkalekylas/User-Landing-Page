@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
-import "./Adduser.css"
+import "./Adduser.css";
 
-const AddUser = ({handleClose}: {handleClose: any}) => {
+const AddUser = ({ handleClose }: { handleClose: any }) => {
   const [userForm, setUserForm] = useState({
     name: "",
     email: "",
@@ -11,14 +11,19 @@ const AddUser = ({handleClose}: {handleClose: any}) => {
     status: "active",
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  //Todo
+  // useEffect(() => {
+  //   getAllUsers();
+  // }, []);
+
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setUserForm({
       ...userForm,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleForm = async (e: { preventDefault: () => void; }) => {
+  const handleForm = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (userForm.name === "" || userForm.email === "") {
       return alert("Please enter required field");
@@ -44,73 +49,68 @@ const AddUser = ({handleClose}: {handleClose: any}) => {
   };
   return (
     <div className="container">
-      <Form onSubmit={handleForm} className="form" autoComplete="off">
+      <Form onSubmit={handleForm} className="form">
         <FormGroup>
-          <label>Name :</label>
-          <input
-            className="my-2"
-            onChange={handleChange}
-            // label="name"
-            type="text"
-            name="name"
-            value={userForm.name}
-            required
-          />
-          <label>Email :</label>
-          <input
-            className="my-2"
-            onChange={handleChange}
-            // label="email"
-            type="email"
-            name="email"
-            value={userForm.email}
-            required
-          />
-          <label>Gender:</label>
-          <select
-            className="statusChoice"
-            name="gender"
-            onChange={handleChange}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-          <br />
+          <div className="input input-group input-group-lg">
+            <label>Name :</label>
+            <input
+              className="form-control my-2"
+              placeholder="Enter username here"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              onChange={handleChange}
+              type="text"
+              name="name"
+              value={userForm.name}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="input input-group input-group-lg">
+            <label>Email :</label>
+            <input
+              className="form-control my-2"
+              placeholder="Enter email id here"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              onChange={handleChange}
+              type="email"
+              name="email"
+              value={userForm.email}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="input input-group input-group-lg">
+            <label>Gender :</label>
+            <select
+              className="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
 
-          <label>Current status:</label>
-          <select
-            className="statusChoice"
-            name="status"
-            onChange={handleChange}
+          <div className="input input-group input-group-lg">
+            <label>Status :</label>
+            <select
+              className="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <Button
+            className="btn_add"
+            color="success"
+            type="submit"
+            onClick={handleClose}
           >
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
+            Add User
+          </Button>
         </FormGroup>
-
-        {/* <FormGroup>
-          <Input
-            className="my-2"
-            onChange={handleChange}
-            label="gender"
-            type="text"
-            name="gender"
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            className="my-2"
-            onChange={handleChange}
-            label="status"
-            type="text"
-            name="status"
-            required
-          />
-        </FormGroup> */}
-        <Button className="my-2" type="submit" onClick={handleClose}>
-          Add new user
-        </Button>
       </Form>
     </div>
   );

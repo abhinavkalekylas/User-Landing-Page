@@ -33,3 +33,7 @@ form {
     margin-bottom: 0.5rem;
     border: none;
 }
+
+.filter {
+    border: none;
+}

@@ -3,12 +3,22 @@ import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
 import "./Adduser.css";
 
+enum GenderType {
+  MALE = "male",
+  FEMALE = "female",
+}
+
+enum StatusType {
+  ACTIVE = "active",
+  INACTIVE = "inactive",
+}
+
 const AddUser = ({ handleClose }: { handleClose: any }) => {
   const [userForm, setUserForm] = useState({
     name: "",
     email: "",
-    gender: "male",
-    status: "active",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
   });
 
   //Todo
@@ -87,8 +97,8 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
               className="form-select form-select-lg mb-3"
               aria-label=".form-select-lg example"
             >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value={GenderType.MALE}>Male</option>
+              <option value={GenderType.FEMALE}>Female</option>
             </select>
           </div>
 
@@ -98,8 +108,8 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
               className="form-select form-select-lg mb-3"
               aria-label=".form-select-lg example"
             >
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value={StatusType.ACTIVE}>Active</option>
+              <option value={StatusType.INACTIVE}>Inactive</option>
             </select>
           </div>
           <Button

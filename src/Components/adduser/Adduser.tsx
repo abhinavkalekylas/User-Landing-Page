@@ -2,24 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
 import "./Adduser.css";
-
-enum GenderType {
-  MALE = "male",
-  FEMALE = "female",
-}
-
-enum StatusType {
-  ACTIVE = "active",
-  INACTIVE = "inactive",
-}
+import {
+  User,
+  GenderType,
+  StatusType,
+} from "../../helperfunction/helperfuntion";
 
 const AddUser = ({ handleClose }: { handleClose: any }) => {
-  const [userForm, setUserForm] = useState({
+  const docOne: User = {
     name: "",
     email: "",
     gender: GenderType.MALE,
     status: StatusType.ACTIVE,
-  });
+  };
+  const [userForm, setUserForm] = useState(docOne);
 
   //Todo
   // useEffect(() => {

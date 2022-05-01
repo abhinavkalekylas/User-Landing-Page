@@ -2,30 +2,30 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
 import "./userList.css";
+import {
+  User,
+  GenderType,
+  StatusType,
+} from "../../helperfunction/helperfuntion";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 
 const UserList = () => {
+  const docOne: User = {
+    id: 0,
+    name: "",
+    email: "",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
+  };
+
   // All users state
-  const [users, setUsers] = useState([
-    {
-      id: 0,
-      name: "",
-      email: "",
-      gender: "",
-      status: "",
-    },
-  ]);
+  const [users, setUsers] = useState([docOne]);
   const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
-  const [userput, setUserput] = useState({
-    name: "",
-    email: "",
-    gender: "",
-    status: "",
-  });
+  const [userput, setUserput] = useState(docOne);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -43,13 +43,7 @@ const UserList = () => {
       });
 
       // Contains all users data
-      const data: {
-        id: number;
-        name: string;
-        email: string;
-        gender: string;
-        status: string;
-      }[] = res.data;
+      const data: [User] = res.data;
 
       setLoad(false);
 

@@ -1,12 +1,13 @@
 import { Modal, Button } from "react-bootstrap";
 import "./Viewuser.css";
+import { User } from "../../helperfunction/helperfuntion";
 
 const Viewuser = ({
   userData,
   showModal,
   handleClose,
 }: {
-  userData: any;
+  userData: User;
   showModal: boolean;
   handleClose: any;
 }) => {
@@ -16,10 +17,10 @@ const Viewuser = ({
         <Modal.Title className="title">User Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Name : {userData.name}</h4>
-        <h4>Email : {userData.email}</h4>
-        <h4>Gender : {userData.gender}</h4>
-        <h4>Current Status : {userData.status}</h4>
+        <p>Name : {userData.name}</p>
+        <p>Email : {userData.email}</p>
+        <p>Gender : {userData.gender}</p>
+        <p>Current Status : {userData.status}</p>
       </Modal.Body>
 
       <Modal.Footer>

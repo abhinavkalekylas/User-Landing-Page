@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Navbar.css";
 import Modaldata from "../modal/Modaldata";
+import { GenderType, StatusType } from "../../helperfunction/helperfuntion";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,10 +21,10 @@ const Navbar = () => {
           aria-label=".form-select-lg example"
         >
           <option value="none">None</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+          <option value={StatusType.ACTIVE}>Active</option>
+          <option value={StatusType.INACTIVE}>Inactive</option>
+          <option value={GenderType.MALE}>Male</option>
+          <option value={GenderType.FEMALE}>Female</option>
         </select>
         <div className="adduser">
           <Button

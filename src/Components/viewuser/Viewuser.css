@@ -1,8 +1,12 @@
-h2, h4, h6,.title {
+h2, p, h6,.title {
     color:black;
     margin-top: 1rem;
 }
 
 .modal-backdrop.show {
     opacity: 0.11;
+}
+
+p {
+    font-size: 1.5rem;
 }

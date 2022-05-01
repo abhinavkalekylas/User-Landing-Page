@@ -10,6 +10,7 @@ import {
 
 const AddUser = ({ handleClose }: { handleClose: any }) => {
   const docOne: User = {
+    id: 0,
     name: "",
     email: "",
     gender: GenderType.MALE,

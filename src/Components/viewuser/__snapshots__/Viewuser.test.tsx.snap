@@ -48,6 +48,7 @@ exports[`renders correctly Viewuser component 1`] = `
   <ModalFooter>
     <Button
       active={false}
+      className=".close_btn"
       color="primary"
       disabled={false}
       onClick={[MockFunction]}

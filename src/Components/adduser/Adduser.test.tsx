@@ -1,3 +1,5 @@
+import { act } from "@testing-library/react";
+import axios from "axios";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { GenderType, StatusType } from "../../helperfunction/helperfuntion";
@@ -30,7 +32,7 @@ it("test email input", () => {
 });
 
 // test select tag for gender
-fit("test gender select input", () => {
+it("test gender select input", () => {
   wrapper
     .find(".gender")
     .simulate("change", { target: { value: GenderType.FEMALE } });
@@ -43,6 +45,35 @@ it("test status select input", () => {
     .find(".status")
     .simulate("change", { target: { value: StatusType.ACTIVE } });
   expect(wrapper.find(".status").props().value).toBe(StatusType.ACTIVE);
+});
+
+// Post
+fit("post test", () => {
+  var MockAdapter = require("axios-mock-adapter");
+  var mock = new MockAdapter(axios);
+
+  const data = {
+    name: "Harinarayan Abbott",
+    email: "abbott_harinarayan@collins.info",
+    gender: "male",
+    status: "active",
+  };
+
+  const token =
+    "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
+
+  mock.onPost("https://gorest.co.in/public/v2/users/").reply(200, data, {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  });
+
+  let wrapper: any;
+  act(() => {
+    wrapper = shallow(<Adduser handleClose={jest.fn()} />);
+  });
+
+  wrapper.update();
+  expect(toJson(wrapper)).toMatchSnapshot();
 });
 
 // TODO submit button

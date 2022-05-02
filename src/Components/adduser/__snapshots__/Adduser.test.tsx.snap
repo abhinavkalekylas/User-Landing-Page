@@ -1,5 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`post test 1`] = `
+<div
+  className="container"
+>
+  <Form
+    className="form"
+    onSubmit={[Function]}
+    tag="form"
+  >
+    <FormGroup
+      tag="div"
+    >
+      <div
+        className="input input-group input-group-lg"
+      >
+        <label>
+          Name :
+        </label>
+        <input
+          aria-describedby="inputGroup-sizing-lg"
+          aria-label="Sizing example input"
+          autoComplete="off"
+          className="username form-control my-2"
+          name="name"
+          onChange={[Function]}
+          placeholder="Enter username here"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="input input-group input-group-lg"
+      >
+        <label>
+          Email :
+        </label>
+        <input
+          aria-describedby="inputGroup-sizing-lg"
+          aria-label="Sizing example input"
+          autoComplete="off"
+          className="email form-control my-2"
+          name="email"
+          onChange={[Function]}
+          placeholder="Enter email id here"
+          required={true}
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="input input-group input-group-lg"
+      >
+        <label>
+          Gender :
+        </label>
+        <select
+          aria-label=".form-select-lg example"
+          className="gender form-select form-select-lg mb-3"
+        >
+          <option
+            value="male"
+          >
+            Male
+          </option>
+          <option
+            value="female"
+          >
+            Female
+          </option>
+        </select>
+      </div>
+      <div
+        className="input input-group input-group-lg"
+      >
+        <label>
+          Status :
+        </label>
+        <select
+          aria-label=".form-select-lg example"
+          className="status form-select form-select-lg mb-3"
+        >
+          <option
+            value="active"
+          >
+            Active
+          </option>
+          <option
+            value="inactive"
+          >
+            Inactive
+          </option>
+        </select>
+      </div>
+      <Button
+        className="btn_add"
+        color="success"
+        onClick={[MockFunction]}
+        tag="button"
+        type="submit"
+      >
+        Add User
+      </Button>
+    </FormGroup>
+  </Form>
+</div>
+`;
+
 exports[`renders correctly Adduser component 1`] = `
 <div
   className="container"

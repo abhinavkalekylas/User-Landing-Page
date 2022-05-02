@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Adduser component 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  onHide={[MockFunction]}
+  restoreFocus={true}
+  show={true}
+>
+  <ModalHeader
+    closeButton={true}
+    closeLabel="Close"
+  >
+    <ModalTitle
+      className="title text-black"
+    >
+      Add User
+    </ModalTitle>
+  </ModalHeader>
+  <AddUser
+    handleClose={[MockFunction]}
+  />
+  <ModalFooter>
+    <Button
+      active={false}
+      className="close_btn"
+      color="info"
+      disabled={false}
+      onClick={[MockFunction]}
+      variant="primary"
+    >
+      Close
+    </Button>
+  </ModalFooter>
+</Modal>
+`;

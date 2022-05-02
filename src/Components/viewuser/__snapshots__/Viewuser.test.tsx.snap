@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Viewuser component 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  onHide={[MockFunction]}
+  restoreFocus={true}
+  show={true}
+>
+  <ModalHeader
+    closeButton={true}
+    closeLabel="Close"
+  >
+    <ModalTitle
+      className="title"
+    >
+      User Details
+    </ModalTitle>
+  </ModalHeader>
+  <ModalBody>
+    <p>
+      Name : 
+      shivam sharma
+    </p>
+    <p>
+      Email : 
+      shivam@gmail.com
+    </p>
+    <p>
+      Gender : 
+      male
+    </p>
+    <p>
+      Current Status : 
+      active
+    </p>
+  </ModalBody>
+  <ModalFooter>
+    <Button
+      active={false}
+      color="primary"
+      disabled={false}
+      onClick={[MockFunction]}
+      variant="primary"
+    >
+      Close
+    </Button>
+  </ModalFooter>
+</Modal>
+`;

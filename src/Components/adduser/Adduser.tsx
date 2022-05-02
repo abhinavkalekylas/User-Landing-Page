@@ -9,19 +9,16 @@ import {
 } from "../../helperfunction/helperfuntion";
 
 const AddUser = ({ handleClose }: { handleClose: any }) => {
-  const docOne: User = {
+  const userData: User = {
     id: 0,
     name: "",
     email: "",
     gender: GenderType.MALE,
     status: StatusType.ACTIVE,
   };
-  const [userForm, setUserForm] = useState(docOne);
 
-  //Todo
-  // useEffect(() => {
-  //   getAllUsers();
-  // }, []);
+  // form for user data after click add user button
+  const [userForm, setUserForm] = useState(userData);
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setUserForm({
@@ -61,7 +58,7 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
           <div className="input input-group input-group-lg">
             <label>Name :</label>
             <input
-              className="form-control my-2"
+              className="username form-control my-2"
               placeholder="Enter username here"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-lg"
@@ -76,7 +73,7 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
           <div className="input input-group input-group-lg">
             <label>Email :</label>
             <input
-              className="form-control my-2"
+              className="email form-control my-2"
               placeholder="Enter email id here"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-lg"
@@ -91,7 +88,7 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
           <div className="input input-group input-group-lg">
             <label>Gender :</label>
             <select
-              className="form-select form-select-lg mb-3"
+              className="gender form-select form-select-lg mb-3"
               aria-label=".form-select-lg example"
             >
               <option value={GenderType.MALE}>Male</option>
@@ -102,7 +99,7 @@ const AddUser = ({ handleClose }: { handleClose: any }) => {
           <div className="input input-group input-group-lg">
             <label>Status :</label>
             <select
-              className="form-select form-select-lg mb-3"
+              className="status form-select form-select-lg mb-3"
               aria-label=".form-select-lg example"
             >
               <option value={StatusType.ACTIVE}>Active</option>

@@ -16,7 +16,7 @@ function Modaldata({
       </Modal.Header>
       <AddUserForm handleClose={handleClose} />
       <Modal.Footer>
-        <Button color="info" onClick={handleClose}>
+        <Button className="close_btn" color="info" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

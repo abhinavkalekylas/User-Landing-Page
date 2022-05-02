@@ -24,7 +24,7 @@ const Viewuser = ({
       </Modal.Body>
 
       <Modal.Footer>
-        <Button color="primary" onClick={handleClose}>
+        <Button className=".close_btn" color="primary" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

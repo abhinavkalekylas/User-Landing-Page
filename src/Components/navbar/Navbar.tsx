@@ -5,6 +5,7 @@ import Modaldata from "../modal/Modaldata";
 import { GenderType, StatusType } from "../../helperfunction/helperfuntion";
 
 const Navbar = () => {
+  // user state to show/hide modal
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => setShowModal(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
 
       <form className="filter form-inline">
         <select
-          className="form-select form-select-lg"
+          className="filter form-select form-select-lg"
           aria-label=".form-select-lg example"
         >
           <option value="none">None</option>

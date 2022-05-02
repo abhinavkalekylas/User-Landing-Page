@@ -11,7 +11,7 @@ import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 
 const UserList = () => {
-  const docOne: User = {
+  const userData: User = {
     id: 0,
     name: "",
     email: "",
@@ -20,12 +20,12 @@ const UserList = () => {
   };
 
   // All users state
-  const [users, setUsers] = useState([docOne]);
+  const [users, setUsers] = useState([userData]);
   const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
-  const [userput, setUserput] = useState(docOne);
+  const [updateUser, setUpdateUser] = useState(userData);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -91,7 +91,7 @@ const UserList = () => {
                       <Button
                         onClick={() => {
                           handleShow();
-                          setUserput(user);
+                          setUpdateUser(user);
                         }}
                         color="info"
                         className="view-button text-white"
@@ -99,7 +99,7 @@ const UserList = () => {
                         View User
                       </Button>
                       <Viewuser
-                        userData={userput}
+                        userData={updateUser}
                         showModal={showModal}
                         handleClose={handleClose}
                       />

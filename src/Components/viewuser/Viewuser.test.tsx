@@ -16,14 +16,17 @@ it("renders correctly Viewuser component", () => {
     status: StatusType.ACTIVE,
   };
 
-  const wrapper = shallow(
-    <Viewuser userData={userData} showModal={true} handleClose={jest.fn()} />
-  );
+  const props = {
+    userData,
+    showModal: true,
+    handleClose: jest.fn(),
+  };
+  const wrapper = shallow(<Viewuser {...props} showModal={false} />);
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
 // Todo Close button
-it("test close button", () => {
+fit("test close button", () => {
   // const mockCallBack = jest.fn();
   // wrapper.find(".close_btn").simulate("click");
   // expect(mockCallBack.mock.calls.length).toEqual(1);

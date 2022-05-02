@@ -8,7 +8,7 @@ import {
   StatusType,
 } from "../../helperfunction/helperfuntion";
 
-const AddUser = ({ handleClose }: { handleClose: any }) => {
+const AddUser = ({ handleClose }: { handleClose: () => void }) => {
   const userData: User = {
     id: 0,
     name: "",

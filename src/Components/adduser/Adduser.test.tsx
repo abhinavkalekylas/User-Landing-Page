@@ -7,7 +7,7 @@ import Adduser from "./Adduser";
 
 let wrapper: any;
 beforeEach(() => {
-  wrapper = shallow(<Adduser handleClose={jest.fn()} />);
+  wrapper = mount(<Adduser handleClose={jest.fn()} />);
 });
 
 // snapshot testing
@@ -19,8 +19,9 @@ it("renders correctly Adduser component", () => {
 it("test username input", () => {
   const event = { target: { value: "shivam" } };
   wrapper.find(".username").simulate("change", event);
-  const expectedEmail = "shivam";
-  expect(wrapper.find(".username").text()).toBe(expectedEmail);
+  wrapper.update();
+  const expectedName = "shivam";
+  expect(wrapper.find(".username").text()).toBe(expectedName);
 });
 
 // test input tag for email
@@ -32,10 +33,11 @@ it("test email input", () => {
 });
 
 // test select tag for gender
-it("test gender select input", () => {
+fit("test gender select input", () => {
   wrapper
     .find(".gender")
     .simulate("change", { target: { value: GenderType.FEMALE } });
+  // console.log(wrapper.state());
   expect(wrapper.find(".gender").props().value).toBe(GenderType.FEMALE);
 });
 

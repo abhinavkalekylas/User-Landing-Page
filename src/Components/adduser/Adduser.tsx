@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
 import "./Adduser.css";
@@ -9,6 +10,7 @@ import {
 } from "../../helperfunction/helperfuntion";
 
 const AddUser = ({ handleClose }: { handleClose: () => void }) => {
+  const navigate = useNavigate();
   const userData: User = {
     id: 0,
     name: "",
@@ -46,6 +48,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
           data: JSON.stringify(userForm),
         });
         console.log(res);
+        navigate(0);
       } catch (error) {
         console.log("Error while creating user ", error);
       }

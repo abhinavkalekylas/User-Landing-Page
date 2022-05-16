@@ -12,9 +12,9 @@ beforeEach(() => {
   const props = {
     handleClose: jest.fn(),
   };
-  wrapper = shallow(
+  wrapper = mount(
     <Router>
-      <Adduser {...props} />
+      <Adduser {...props}></Adduser>
     </Router>
   );
 });
@@ -26,7 +26,8 @@ it("renders correctly Adduser component", () => {
 
 // test input tag for name
 it("test username input", () => {
-  const event = { target: { value: "shivam" } };
+  const event = { target: { name: "name", value: "shivam" } };
+  // console.log(wrapper.debug());
   wrapper.find(".username").simulate("change", event);
   wrapper.update();
   expect(wrapper.find(".username").props().value).toEqual("shivam");
@@ -34,25 +35,25 @@ it("test username input", () => {
 
 // test input tag for email
 it("test email input", () => {
-  const event = { target: { value: "shivam@gmail.com" } };
+  const event = { target: { name: "email", value: "shivam@gmail.com" } };
   wrapper.find(".email").simulate("change", event);
   expect(wrapper.find(".email").props().value).toEqual("shivam@gmail.com");
 });
 
 // test select tag for gender
-fit("test gender select input", () => {
-  wrapper
-    .find(".gender")
-    .simulate("change", { target: { value: GenderType.FEMALE } });
-  console.log(wrapper.state());
+it("test gender select input", () => {
+  wrapper.find(".gender").simulate("change", {
+    target: { name: "gender", value: GenderType.FEMALE },
+  });
+  // console.log(wrapper.state());
   expect(wrapper.find(".gender").props().value).toBe(GenderType.FEMALE);
 });
 
 // test select tag for status
 it("test status select input", () => {
-  wrapper
-    .find(".status")
-    .simulate("change", { target: { value: StatusType.ACTIVE } });
+  wrapper.find(".status").simulate("change", {
+    target: { name: "status", value: StatusType.ACTIVE },
+  });
   expect(wrapper.find(".status").props().value).toBe(StatusType.ACTIVE);
 });
 
@@ -78,7 +79,11 @@ it("post test", () => {
 
   let wrapper: any;
   act(() => {
-    wrapper = shallow(<Adduser handleClose={jest.fn()} />);
+    wrapper = shallow(
+      <Router>
+        <Adduser handleClose={jest.fn()} />
+      </Router>
+    );
   });
 
   wrapper.update();
@@ -87,13 +92,15 @@ it("post test", () => {
 
 // submit button
 it("should be able to submit the form", () => {
-  const component = render(<Adduser handleClose={jest.fn()} />);
+  const component = render(
+    <Router>
+      <Adduser handleClose={jest.fn()} />
+    </Router>
+  );
   const email = screen.getByPlaceholderText("Enter email id here");
-  const button = screen.getAllByRole("Button");
-
+  const button = screen.getAllByRole("button");
   userEvent.type(email, "abhi@gmail.com");
   userEvent.click(button[0]);
-
-  const user = screen.getByText("abhi@gmail.com");
+  const user = screen.getByDisplayValue("abhi@gmail.com");
   expect(user).toBeInTheDocument();
 });

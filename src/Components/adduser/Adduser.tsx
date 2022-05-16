@@ -23,7 +23,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
   const [userForm, setUserForm] = useState(userData);
   const [error, setError] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     setUserForm({
       ...userForm,
       [e.target.name]: e.target.value,
@@ -58,6 +58,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    console.log(regex.test(email));
     if (regex.test(email)) {
       return true;
     }
@@ -99,7 +100,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-lg"
                   onChange={handleChange}
-                  type="email"
+                  type="text"
                   name="email"
                   value={userForm.email}
                   autoComplete="off"
@@ -138,7 +139,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
                   className="btn_add"
                   color="success"
                   type="submit"
-                  onClick={handleClose}
+                  // onClick={handleClose}
                 >
                   Add User
                 </Button>
@@ -160,3 +161,6 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
 };
 
 export default AddUser;
+function e(e: any, arg1: string): void {
+  throw new Error("Function not implemented.");
+}

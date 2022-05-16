@@ -19,11 +19,11 @@ it("renders correctly Modaldata component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-// Todo Close button
+//test Close button
 it("test close button", () => {
   wrapper.find(".close_btn").simulate("click");
   wrapper.update();
-  expect(wrapper.find(".title").exists()).toEqual(false);
+  expect(wrapper.find(".close_btn").props().active).toEqual(false);
 });
 
 // test for rendering modal

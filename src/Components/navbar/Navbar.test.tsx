@@ -18,11 +18,12 @@ it("renders correctly App component", () => {
 });
 
 // test for select tag for filter
-fit("test filter select input", () => {
-  wrapper = mount(<Navbar />);
-  wrapper
-    .find(".filter")
-    .simulate("change", { target: { value: StatusType.ACTIVE } });
+it("test filter select input", () => {
+  wrapper.find(".filter").simulate("change", {
+    target: { name: "status", value: StatusType.ACTIVE },
+  });
   wrapper.update();
-  expect(wrapper.find(".filter").props().value).toBe(StatusType.ACTIVE);
+  expect(wrapper.find(".filter").props().children.at(1).props.value).toBe(
+    StatusType.ACTIVE
+  );
 });

@@ -1,3 +1,5 @@
+import userEvent from "@testing-library/user-event";
+import { screen, render } from "@testing-library/react";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import {
@@ -37,8 +39,24 @@ it("renders modal when showModal is true", async () => {
 });
 
 // test close button
-it("test close button", () => {
-  wrapper.find(".close_btn").simulate("click");
-  wrapper.update();
-  expect(wrapper.find(".title").exists()).toEqual(false);
+fit("test close button", () => {
+  const userData: User = {
+    id: 0,
+    name: "shivam sharma",
+    email: "shivam@gmail.com",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
+  };
+
+  const props = {
+    userData,
+    showModal: true,
+    handleClose: jest.fn(),
+  };
+  const component = render(<Viewuser {...props} />);
+  const button = screen.getAllByRole("button");
+  userEvent.click(button[0]);
+  expect(screen.getByDisplayValue("User Details")).toBeInTheDocument();
+  // wrapper.update();
+  // expect(wrapper.find(".title").exists()).toEqual(false);
 });

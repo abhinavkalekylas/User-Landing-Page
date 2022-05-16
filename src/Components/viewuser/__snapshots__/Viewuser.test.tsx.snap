@@ -9,7 +9,6 @@ exports[`renders correctly Viewuser component 1`] = `
   dialogAs={
     Object {
       "$$typeof": Symbol(react.forward_ref),
-      "displayName": "ModalDialog",
       "render": [Function],
     }
   }

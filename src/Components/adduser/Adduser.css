@@ -20,7 +20,7 @@ label {
     margin: 1rem;
 }
 
-.btn_add {
+.btn_add, .reset_add {
     height: 3rem;
-    margin: 1rem 11rem;   
+    margin: 1rem 4rem;   
 }

@@ -7,7 +7,8 @@ import {
 } from "../../helperfunction/helperfuntion";
 import Viewuser from "./Viewuser";
 
-it("renders correctly Viewuser component", () => {
+let wrapper: any;
+beforeEach(() => {
   const userData: User = {
     id: 0,
     name: "shivam sharma",
@@ -21,13 +22,23 @@ it("renders correctly Viewuser component", () => {
     showModal: true,
     handleClose: jest.fn(),
   };
-  const wrapper = shallow(<Viewuser {...props} showModal={false} />);
+  wrapper = shallow(<Viewuser {...props} />);
+});
+
+it("renders correctly Viewuser component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-// Todo Close button
-fit("test close button", () => {
-  // const mockCallBack = jest.fn();
-  // wrapper.find(".close_btn").simulate("click");
-  // expect(mockCallBack.mock.calls.length).toEqual(1);
+// test for rendering modal
+it("renders modal when showModal is true", async () => {
+  wrapper.update();
+  expect(wrapper.find(".title").exists()).toEqual(true);
+  expect(wrapper.text()).toContain("User Details");
+});
+
+// test close button
+it("test close button", () => {
+  wrapper.find(".close_btn").simulate("click");
+  wrapper.update();
+  expect(wrapper.find(".title").exists()).toEqual(false);
 });

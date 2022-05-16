@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly Adduser component 1`] = `
+exports[`renders correctly Modaldata component 1`] = `
 <Modal
   animation={true}
   autoFocus={true}
@@ -8,6 +8,7 @@ exports[`renders correctly Adduser component 1`] = `
   dialogAs={
     Object {
       "$$typeof": Symbol(react.forward_ref),
+      "displayName": "ModalDialog",
       "render": [Function],
     }
   }
@@ -34,10 +35,9 @@ exports[`renders correctly Adduser component 1`] = `
     <Button
       active={false}
       className="close_btn"
-      color="info"
       disabled={false}
       onClick={[MockFunction]}
-      variant="primary"
+      variant="secondary"
     >
       Close
     </Button>

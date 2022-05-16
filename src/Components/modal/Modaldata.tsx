@@ -7,7 +7,7 @@ function Modaldata({
   handleClose,
 }: {
   showModal: boolean;
-  handleClose: any;
+  handleClose: () => void;
 }) {
   return (
     <Modal show={showModal} onHide={handleClose}>
@@ -16,7 +16,7 @@ function Modaldata({
       </Modal.Header>
       <AddUserForm handleClose={handleClose} />
       <Modal.Footer>
-        <Button className="close_btn" color="info" onClick={handleClose}>
+        <Button className="close_btn" variant="secondary" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

@@ -9,10 +9,10 @@ const Viewuser = ({
 }: {
   userData: User;
   showModal: boolean;
-  handleClose: any;
+  handleClose: () => void;
 }) => {
   return (
-    <Modal show={showModal} onHide={handleClose}>
+    <Modal className="modal_container" show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title className="title">User Details</Modal.Title>
       </Modal.Header>

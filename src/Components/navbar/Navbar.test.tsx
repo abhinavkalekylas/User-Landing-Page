@@ -1,4 +1,4 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { StatusType } from "../../helperfunction/helperfuntion";
 import Navbar from "./Navbar";
@@ -18,9 +18,11 @@ it("renders correctly App component", () => {
 });
 
 // test for select tag for filter
-it("test filter select input", () => {
+fit("test filter select input", () => {
+  wrapper = mount(<Navbar />);
   wrapper
     .find(".filter")
     .simulate("change", { target: { value: StatusType.ACTIVE } });
+  wrapper.update();
   expect(wrapper.find(".filter").props().value).toBe(StatusType.ACTIVE);
 });

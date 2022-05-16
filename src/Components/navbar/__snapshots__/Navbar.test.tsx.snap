@@ -11,11 +11,11 @@ exports[`renders correctly App component 1`] = `
     User Landing Page
   </a>
   <form
-    className="filter form-inline"
+    className="form-inline"
   >
     <select
       aria-label=".form-select-lg example"
-      className="form-select form-select-lg"
+      className="filter form-select form-select-lg"
     >
       <option
         value="none"

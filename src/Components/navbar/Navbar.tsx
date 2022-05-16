@@ -16,7 +16,7 @@ const Navbar = () => {
         User Landing Page
       </a>
 
-      <form className="filter form-inline">
+      <form className="form-inline">
         <select
           className="filter form-select form-select-lg"
           aria-label=".form-select-lg example"

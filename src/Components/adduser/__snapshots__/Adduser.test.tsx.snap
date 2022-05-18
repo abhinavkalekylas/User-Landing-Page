@@ -74,7 +74,7 @@ exports[`renders correctly Adduser component 1`] = `
     }
   >
     <AddUser
-      handleClose={[MockFunction]}
+      closeModal={[MockFunction]}
     >
       <div
         className="container"
@@ -97,7 +97,9 @@ exports[`renders correctly Adduser component 1`] = `
                 <div
                   className="input input-group input-group-lg"
                 >
-                  <label>
+                  <label
+                    className="adduser_label"
+                  >
                     Name :
                   </label>
                   <input
@@ -116,7 +118,9 @@ exports[`renders correctly Adduser component 1`] = `
                 <div
                   className="input input-group input-group-lg"
                 >
-                  <label>
+                  <label
+                    className="adduser_label"
+                  >
                     Email :
                   </label>
                   <input
@@ -135,7 +139,9 @@ exports[`renders correctly Adduser component 1`] = `
                 <div
                   className="input input-group input-group-lg"
                 >
-                  <label>
+                  <label
+                    className="adduser_label"
+                  >
                     Gender :
                   </label>
                   <select
@@ -160,7 +166,9 @@ exports[`renders correctly Adduser component 1`] = `
                 <div
                   className="input input-group input-group-lg"
                 >
-                  <label>
+                  <label
+                    className="adduser_label"
+                  >
                     Status :
                   </label>
                   <select

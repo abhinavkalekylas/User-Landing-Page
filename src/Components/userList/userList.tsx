@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
 import "./userList.css";
-import {
-  User,
-  GenderType,
-  StatusType,
-} from "../../helperfunction/helperfuntion";
+import { User, GenderType, StatusType } from "../../modalfunction/Modal";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 
@@ -24,11 +20,11 @@ const UserList = () => {
   const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
 
-  const [showModal, setShowModal] = useState(false);
+  const [viewUserModal, setViewUserModal] = useState(false);
   const [updateUser, setUpdateUser] = useState(userData);
 
-  const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  const closeModal = () => setViewUserModal(false);
+  const openModal = () => setViewUserModal(true);
 
   const getAllUsers = async () => {
     try {
@@ -90,7 +86,7 @@ const UserList = () => {
                     <td className="action_buttons">
                       <Button
                         onClick={() => {
-                          handleShow();
+                          openModal();
                           setUpdateUser(user);
                         }}
                         color="info"
@@ -100,8 +96,8 @@ const UserList = () => {
                       </Button>
                       <Viewuser
                         userData={updateUser}
-                        showModal={showModal}
-                        handleClose={handleClose}
+                        viewUserModal={viewUserModal}
+                        closeModal={closeModal}
                       />
                       <Button color="primary" className="edit-button">
                         Edit User

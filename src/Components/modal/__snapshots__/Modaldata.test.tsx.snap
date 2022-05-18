@@ -28,7 +28,7 @@ exports[`renders correctly Modaldata component 1`] = `
     </ModalTitle>
   </ModalHeader>
   <AddUser
-    handleClose={[MockFunction]}
+    closeModal={[MockFunction]}
   />
   <ModalFooter>
     <Button

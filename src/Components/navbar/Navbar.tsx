@@ -2,21 +2,21 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./Navbar.css";
 import Modaldata from "../modal/Modaldata";
-import { GenderType, StatusType } from "../../helperfunction/helperfuntion";
+import { GenderType, StatusType } from "../../modalfunction/Modal";
 
 const Navbar = () => {
   // user state to show/hide modal
-  const [showModal, setShowModal] = useState(false);
+  const [addUserModal, setAddUserModal] = useState(false);
 
-  const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  const closeModal = () => setAddUserModal(false);
+  const openModal = () => setAddUserModal(true);
   return (
     <nav className="navbar navbar-dark">
       <a href="/" className="navbar-brand ">
         User Landing Page
       </a>
 
-      <form className="form-inline">
+      <form className="nav_form form-inline">
         <select
           className="filter form-select form-select-lg"
           aria-label=".form-select-lg example"
@@ -31,13 +31,13 @@ const Navbar = () => {
           <Button
             color="success"
             className="btn_add btn btn-success btn-outline-light"
-            onClick={handleShow}
+            onClick={openModal}
           >
             Add User
           </Button>
         </div>
       </form>
-      <Modaldata showModal={showModal} handleClose={handleClose} />
+      <Modaldata addUserModal={addUserModal} closeModal={closeModal} />
     </nav>
   );
 };

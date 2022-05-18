@@ -8,8 +8,8 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 let wrapper: any;
 beforeEach(() => {
   const props = {
-    showModal: true,
-    handleClose: jest.fn(),
+    addUserModal: true,
+    closeModal: jest.fn(),
   };
   wrapper = shallow(<Modaldata {...props} />);
 });
@@ -22,13 +22,7 @@ it("renders correctly Modaldata component", () => {
 //test Close button
 it("test close button", () => {
   wrapper.find(".close_btn").simulate("click");
-  wrapper.update();
-  expect(wrapper.find(".close_btn").props().active).toEqual(false);
-});
-
-// test for rendering modal
-it("renders modal when showModal is true", async () => {
-  wrapper.update();
-  expect(wrapper.find(".title").exists()).toEqual(true);
-  expect(wrapper.text()).toContain("Add User");
+  expect(
+    wrapper.props().children[1].props.closeModal.mock.invocationCallOrder[0]
+  ).toEqual(1);
 });

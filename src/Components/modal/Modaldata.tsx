@@ -1,27 +1,28 @@
 import { Modal, Button } from "react-bootstrap";
 import "./Modaldata.css";
 import AddUserForm from "../adduser/Adduser";
+import { Children } from "react";
 
-function Modaldata({
-  showModal,
-  handleClose,
+const Modaldata = ({
+  addUserModal,
+  closeModal,
 }: {
-  showModal: boolean;
-  handleClose: () => void;
-}) {
+  addUserModal: boolean;
+  closeModal: () => void;
+}) => {
   return (
-    <Modal show={showModal} onHide={handleClose}>
+    <Modal show={addUserModal} onHide={closeModal}>
       <Modal.Header closeButton>
         <Modal.Title className="title text-black">Add User</Modal.Title>
       </Modal.Header>
-      <AddUserForm handleClose={handleClose} />
+      <AddUserForm closeModal={closeModal} />
       <Modal.Footer>
-        <Button className="close_btn" variant="secondary" onClick={handleClose}>
+        <Button className="close_btn" variant="secondary" onClick={closeModal}>
           Close
         </Button>
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default Modaldata;

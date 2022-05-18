@@ -29,19 +29,27 @@ exports[`renders correctly Viewuser component 1`] = `
     </ModalTitle>
   </ModalHeader>
   <ModalBody>
-    <p>
+    <p
+      className="user_data"
+    >
       Name : 
       shivam sharma
     </p>
-    <p>
+    <p
+      className="user_data"
+    >
       Email : 
       shivam@gmail.com
     </p>
-    <p>
+    <p
+      className="user_data"
+    >
       Gender : 
       male
     </p>
-    <p>
+    <p
+      className="user_data"
+    >
       Current Status : 
       active
     </p>
@@ -49,7 +57,7 @@ exports[`renders correctly Viewuser component 1`] = `
   <ModalFooter>
     <Button
       active={false}
-      className=".close_btn"
+      className="close_btn"
       color="primary"
       disabled={false}
       onClick={[MockFunction]}

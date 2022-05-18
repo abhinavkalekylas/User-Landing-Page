@@ -11,6 +11,6 @@ body {
   background-color: rgb(104, 104, 104);
 }
 
-nav {
+.navbar {
   border-radius: 0.625rem;
 }

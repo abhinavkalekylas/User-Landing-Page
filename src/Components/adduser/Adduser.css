@@ -2,7 +2,7 @@
     margin-top: 1rem;
 }
 
-.form, label {
+.form, .adduser_label {
     color: black;
 }
 
@@ -12,7 +12,7 @@
 }
 
 
-label {
+.adduser_label {
     font-size: 1.2rem;
     display: flex;
     justify-content: center;

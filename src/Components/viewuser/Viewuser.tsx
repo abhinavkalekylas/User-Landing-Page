@@ -1,30 +1,30 @@
 import { Modal, Button } from "react-bootstrap";
 import "./Viewuser.css";
-import { User } from "../../helperfunction/helperfuntion";
+import { User } from "../../modalfunction/Modal";
 
 const Viewuser = ({
   userData,
-  showModal,
-  handleClose,
+  viewUserModal,
+  closeModal,
 }: {
   userData: User;
-  showModal: boolean;
-  handleClose: () => void;
+  viewUserModal: boolean;
+  closeModal: () => void;
 }) => {
   return (
-    <Modal className="modal_container" show={showModal} onHide={handleClose}>
+    <Modal className="modal_container" show={viewUserModal} onHide={closeModal}>
       <Modal.Header closeButton>
         <Modal.Title className="title">User Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Name : {userData.name}</p>
-        <p>Email : {userData.email}</p>
-        <p>Gender : {userData.gender}</p>
-        <p>Current Status : {userData.status}</p>
+        <p className="user_data">Name : {userData.name}</p>
+        <p className="user_data">Email : {userData.email}</p>
+        <p className="user_data">Gender : {userData.gender}</p>
+        <p className="user_data">Current Status : {userData.status}</p>
       </Modal.Body>
 
       <Modal.Footer>
-        <Button className="close_btn" color="primary" onClick={handleClose}>
+        <Button className="close_btn" color="primary" onClick={closeModal}>
           Close
         </Button>
       </Modal.Footer>

@@ -11,7 +11,7 @@ exports[`renders correctly App component 1`] = `
     User Landing Page
   </a>
   <form
-    className="form-inline"
+    className="nav_form form-inline"
   >
     <select
       aria-label=".form-select-lg example"
@@ -59,8 +59,8 @@ exports[`renders correctly App component 1`] = `
     </div>
   </form>
   <Modaldata
-    handleClose={[Function]}
-    showModal={false}
+    addUserModal={false}
+    closeModal={[Function]}
   />
 </nav>
 `;

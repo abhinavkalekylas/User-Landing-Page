@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
@@ -7,9 +7,10 @@ import {
   User,
   GenderType,
   StatusType,
-} from "../../helperfunction/helperfuntion";
+  validateEmail,
+} from "../../modalfunction/Modal";
 
-const AddUser = ({ handleClose }: { handleClose: () => void }) => {
+const AddUser = ({ closeModal }: { closeModal: () => void }) => {
   const navigate = useNavigate();
   const userData: User = {
     id: 0,
@@ -56,15 +57,6 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
     }
   };
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    console.log(regex.test(email));
-    if (regex.test(email)) {
-      return true;
-    }
-    return false;
-  };
-
   const resetForm = () => {
     setUserForm(userData);
   };
@@ -78,7 +70,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
           <Form onSubmit={handleForm} className="form">
             <FormGroup>
               <div className="input input-group input-group-lg">
-                <label>Name :</label>
+                <label className="adduser_label">Name :</label>
                 <input
                   className="username form-control my-2"
                   placeholder="Enter username here"
@@ -93,7 +85,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
                 />
               </div>
               <div className="input input-group input-group-lg">
-                <label>Email :</label>
+                <label className="adduser_label">Email :</label>
                 <input
                   className="email form-control my-2"
                   placeholder="Enter email id here"
@@ -108,7 +100,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
                 />
               </div>
               <div className="input input-group input-group-lg">
-                <label>Gender :</label>
+                <label className="adduser_label">Gender :</label>
                 <select
                   name="gender"
                   value={userForm.gender}
@@ -122,7 +114,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
               </div>
 
               <div className="input input-group input-group-lg">
-                <label>Status :</label>
+                <label className="adduser_label">Status :</label>
                 <select
                   name="status"
                   value={userForm.status}
@@ -135,12 +127,7 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
                 </select>
               </div>
               <div className="d-flex">
-                <Button
-                  className="btn_add"
-                  color="success"
-                  type="submit"
-                  // onClick={handleClose}
-                >
+                <Button className="btn_add" color="success" type="submit">
                   Add User
                 </Button>
 
@@ -161,6 +148,3 @@ const AddUser = ({ handleClose }: { handleClose: () => void }) => {
 };
 
 export default AddUser;
-function e(e: any, arg1: string): void {
-  throw new Error("Function not implemented.");
-}

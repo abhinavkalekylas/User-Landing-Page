@@ -1,6 +1,6 @@
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { StatusType } from "../../helperfunction/helperfuntion";
+import { StatusType } from "../../modalfunction/Modal";
 import Navbar from "./Navbar";
 
 let wrapper: any;

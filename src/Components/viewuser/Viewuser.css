@@ -1,4 +1,4 @@
-h2, p, h6,.title {
+ .user_data, .title {
     color:black;
     margin-top: 1rem;
 }
@@ -7,7 +7,7 @@ h2, p, h6,.title {
     opacity: 0.11;
 }
 
-p {
+.user_data {
     font-size: 1.5rem;
 }
 

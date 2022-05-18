@@ -3,14 +3,15 @@ import { act, render, screen } from "@testing-library/react";
 import axios from "axios";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { GenderType, StatusType } from "../../helperfunction/helperfuntion";
+import { GenderType, StatusType, User } from "../../modalfunction/Modal";
 import Adduser from "./Adduser";
 import userEvent from "@testing-library/user-event";
 
+var MockAdapter = require("axios-mock-adapter");
 let wrapper: any;
 beforeEach(() => {
   const props = {
-    handleClose: jest.fn(),
+    closeModal: jest.fn(),
   };
   wrapper = mount(
     <Router>
@@ -58,43 +59,41 @@ it("test status select input", () => {
 });
 
 // Post
-it("post test", () => {
-  var MockAdapter = require("axios-mock-adapter");
+it("post test", async () => {
   var mock = new MockAdapter(axios);
 
-  const data = {
+  const user_data: User = {
+    id: 123,
     name: "Harinarayan Abbott",
     email: "abbott_harinarayan@collins.info",
-    gender: "male",
-    status: "active",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
   };
 
   const token =
     "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
 
-  mock.onPost("https://gorest.co.in/public/v2/users/").reply(200, data, {
+  mock.onPost("https://gorest.co.in/public/v2/users/").reply(200, user_data, {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   });
-
-  let wrapper: any;
-  act(() => {
-    wrapper = shallow(
-      <Router>
-        <Adduser handleClose={jest.fn()} />
-      </Router>
-    );
+  const res = await axios("https://gorest.co.in/public/v2/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    data: JSON.stringify(user_data),
   });
 
-  wrapper.update();
-  expect(toJson(wrapper)).toMatchSnapshot();
+  expect(res).toEqual(user_data);
 });
 
 // submit button
 it("should be able to submit the form", () => {
   const component = render(
     <Router>
-      <Adduser handleClose={jest.fn()} />
+      <Adduser closeModal={jest.fn()} />
     </Router>
   );
   const email = screen.getByPlaceholderText("Enter email id here");

@@ -1,45 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly Modaldata component 1`] = `
-<Modal
-  animation={true}
-  autoFocus={true}
-  backdrop={true}
-  dialogAs={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "render": [Function],
-    }
-  }
-  enforceFocus={true}
-  keyboard={true}
-  onHide={[MockFunction]}
-  restoreFocus={true}
-  show={true}
+<ModalTemplate
+  closeModal={[MockFunction]}
+  title_name="Add User"
+  userModal={true}
 >
-  <ModalHeader
-    closeButton={true}
-    closeLabel="Close"
-  >
-    <ModalTitle
-      className="title text-black"
-    >
-      Add User
-    </ModalTitle>
-  </ModalHeader>
   <AddUser
     closeModal={[MockFunction]}
   />
-  <ModalFooter>
-    <Button
-      active={false}
-      className="close_btn"
-      disabled={false}
-      onClick={[MockFunction]}
-      variant="secondary"
-    >
-      Close
-    </Button>
-  </ModalFooter>
-</Modal>
+</ModalTemplate>
 `;

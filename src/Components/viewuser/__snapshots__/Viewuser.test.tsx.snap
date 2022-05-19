@@ -1,70 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly Viewuser component 1`] = `
-<Modal
-  animation={true}
-  autoFocus={true}
-  backdrop={true}
-  className="modal_container"
-  dialogAs={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "render": [Function],
-    }
-  }
-  enforceFocus={true}
-  keyboard={true}
-  onHide={[MockFunction]}
-  restoreFocus={true}
-  show={true}
+<ModalTemplate
+  closeModal={[MockFunction]}
+  title_name="View User"
+  userModal={true}
 >
-  <ModalHeader
-    closeButton={true}
-    closeLabel="Close"
+  <p
+    className="user_data"
   >
-    <ModalTitle
-      className="title"
-    >
-      User Details
-    </ModalTitle>
-  </ModalHeader>
-  <ModalBody>
-    <p
-      className="user_data"
-    >
-      Name : 
-      shivam sharma
-    </p>
-    <p
-      className="user_data"
-    >
-      Email : 
-      shivam@gmail.com
-    </p>
-    <p
-      className="user_data"
-    >
-      Gender : 
-      male
-    </p>
-    <p
-      className="user_data"
-    >
-      Current Status : 
-      active
-    </p>
-  </ModalBody>
-  <ModalFooter>
-    <Button
-      active={false}
-      className="close_btn"
-      color="primary"
-      disabled={false}
-      onClick={[MockFunction]}
-      variant="primary"
-    >
-      Close
-    </Button>
-  </ModalFooter>
-</Modal>
+    Name : 
+    shivam sharma
+  </p>
+  <p
+    className="user_data"
+  >
+    Email : 
+    shivam@gmail.com
+  </p>
+  <p
+    className="user_data"
+  >
+    Gender : 
+    male
+  </p>
+  <p
+    className="user_data"
+  >
+    Current Status : 
+    active
+  </p>
+</ModalTemplate>
 `;

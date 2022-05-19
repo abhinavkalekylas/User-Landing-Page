@@ -27,17 +27,3 @@ beforeEach(() => {
 it("renders correctly Viewuser component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
-
-// test user information
-it("view user check test", () => {
-  expect(wrapper.find(".title").exists()).toEqual(true);
-});
-
-//test Close button
-it("test close button", () => {
-  wrapper.find(".close_btn").simulate("click");
-  expect(
-    wrapper.props().children[2].props.children.props.onClick.mock
-      .invocationCallOrder[0]
-  ).toEqual(1);
-});

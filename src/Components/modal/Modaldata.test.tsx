@@ -18,11 +18,3 @@ beforeEach(() => {
 it("renders correctly Modaldata component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
-
-//test Close button
-it("test close button", () => {
-  wrapper.find(".close_btn").simulate("click");
-  expect(
-    wrapper.props().children[1].props.closeModal.mock.invocationCallOrder[0]
-  ).toEqual(1);
-});

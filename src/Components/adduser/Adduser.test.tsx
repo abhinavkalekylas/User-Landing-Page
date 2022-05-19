@@ -28,7 +28,6 @@ it("renders correctly Adduser component", () => {
 // test input tag for name
 it("test username input", () => {
   const event = { target: { name: "name", value: "shivam" } };
-  // console.log(wrapper.debug());
   wrapper.find(".username").simulate("change", event);
   wrapper.update();
   expect(wrapper.find(".username").props().value).toEqual("shivam");
@@ -46,7 +45,6 @@ it("test gender select input", () => {
   wrapper.find(".gender").simulate("change", {
     target: { name: "gender", value: GenderType.FEMALE },
   });
-  // console.log(wrapper.state());
   expect(wrapper.find(".gender").props().value).toBe(GenderType.FEMALE);
 });
 
@@ -59,7 +57,7 @@ it("test status select input", () => {
 });
 
 // Post
-it("post test", async () => {
+fit("post test", async () => {
   var mock = new MockAdapter(axios);
 
   const user_data: User = {

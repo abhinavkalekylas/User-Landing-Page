@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import "./Navbar.css";
+import "./Navbar.scss";
 import Modaldata from "../modal/Modaldata";
 import { GenderType, StatusType } from "../../modalfunction/Modal";
 

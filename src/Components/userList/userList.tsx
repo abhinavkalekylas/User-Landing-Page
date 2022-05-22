@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
-import "./userList.css";
-import { User, GenderType, StatusType } from "../../modalfunction/Modal";
+import "./userList.scss";
+import { User, GenderType, StatusType, token } from "../../modalfunction/Modal";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 
@@ -28,8 +28,6 @@ const UserList = () => {
 
   const getAllUsers = async () => {
     try {
-      const token =
-        "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
       const res = await axios("https://gorest.co.in/public/v2/users", {
         method: "GET",
         headers: {
@@ -56,7 +54,7 @@ const UserList = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="userlist_container">
       {error ? (
         <h2>This page is under develop. We will sure to give an update</h2>
       ) : load ? (

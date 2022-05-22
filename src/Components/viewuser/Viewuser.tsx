@@ -1,3 +1,4 @@
+import React from "react";
 import "./Viewuser.css";
 import { User } from "../../modalfunction/Modal";
 import ModalTemplate from "../modaltemplate/ModalTemplate";

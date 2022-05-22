@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
-import "./Adduser.css";
+import { token } from "../../modalfunction/Modal";
+import "./Adduser.scss";
 import {
   User,
   GenderType,
@@ -39,9 +40,7 @@ const AddUser = ({ closeModal }: { closeModal: () => void }) => {
       return alert("Email is not valid");
     } else {
       try {
-        const token =
-          "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
-        const res = await axios("https://gorest.co.in/public/v2/users", {
+        await axios("https://gorest.co.in/public/v2/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -49,6 +48,7 @@ const AddUser = ({ closeModal }: { closeModal: () => void }) => {
           },
           data: JSON.stringify(userForm),
         });
+        closeModal();
         navigate(0);
       } catch (error) {
         setError(true);
@@ -62,7 +62,7 @@ const AddUser = ({ closeModal }: { closeModal: () => void }) => {
   };
 
   return (
-    <div className="container">
+    <div className="adduser_container">
       {error ? (
         <h2>This page is under develop. We will sure give you an update</h2>
       ) : (
@@ -127,7 +127,11 @@ const AddUser = ({ closeModal }: { closeModal: () => void }) => {
                 </select>
               </div>
               <div className="d-flex">
-                <Button className="btn_add" color="success" type="submit">
+                <Button
+                  className="adduser_btn btn_add"
+                  color="success"
+                  type="submit"
+                >
                   Add User
                 </Button>
 

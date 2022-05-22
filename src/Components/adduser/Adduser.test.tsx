@@ -3,7 +3,7 @@ import { act, render, screen } from "@testing-library/react";
 import axios from "axios";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { GenderType, StatusType, User } from "../../modalfunction/Modal";
+import { GenderType, StatusType, User, token } from "../../modalfunction/Modal";
 import Adduser from "./Adduser";
 import userEvent from "@testing-library/user-event";
 
@@ -57,7 +57,7 @@ it("test status select input", () => {
 });
 
 // Post
-fit("post test", async () => {
+it("post test", async () => {
   var mock = new MockAdapter(axios);
 
   const user_data: User = {
@@ -68,23 +68,19 @@ fit("post test", async () => {
     status: StatusType.ACTIVE,
   };
 
-  const token =
-    "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
-
   mock.onPost("https://gorest.co.in/public/v2/users/").reply(200, user_data, {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   });
-  const res = await axios("https://gorest.co.in/public/v2/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    data: JSON.stringify(user_data),
-  });
+  const event1 = { target: { name: "email", value: "shivam@gmail.com" } };
+  wrapper.find(".email").simulate("change", event1);
+  expect(wrapper.find(".email").props().value).toEqual("shivam@gmail.com");
 
-  expect(res).toEqual(user_data);
+  const event = { target: { name: "name", value: "shivam" } };
+  wrapper.find(".username").simulate("change", event);
+  expect(wrapper.find(".username").props().value).toEqual("shivam");
+
+  wrapper.find("Button.adduser_btn").simulate("click");
 });
 
 // submit button

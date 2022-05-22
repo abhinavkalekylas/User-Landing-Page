@@ -2,6 +2,7 @@ import axios from "axios";
 import { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { act } from "react-dom/test-utils";
+import { token } from "../../modalfunction/Modal";
 import UserList from "./userList";
 
 // snapshot testing
@@ -26,9 +27,6 @@ it("test axios", async () => {
     },
   ];
 
-  const token =
-    "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
-
   // Mock any GET request
   // arguments for reply are (status, data, headers)
   mock.onGet("https://gorest.co.in/public/v2/users/").reply(200, data, {
@@ -46,7 +44,7 @@ it("test axios", async () => {
   expect(res.data).toEqual(data);
 });
 
-// fit("test axios", async () => {
+// it("test axios", async () => {
 //   var MockAdapter = require("axios-mock-adapter");
 
 //   // This sets the mock adapter on the default instance
@@ -59,9 +57,6 @@ it("test axios", async () => {
 //       "gender": "male",
 //       "status": "inactive"
 //   }]
-
-//   const token =
-//     "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
 
 //   // Mock any GET request
 //   // arguments for reply are (status, data, headers)

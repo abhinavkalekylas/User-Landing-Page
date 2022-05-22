@@ -2,14 +2,16 @@
 
 exports[`renders correctly App component 1`] = `
 <div
-  className="container loader"
+  className="container loader_container"
 >
-  <h2>
-    Loading...  Please wait..
+  <h2
+    className="load_text"
+  >
+    Loading... Please wait..
   </h2>
   <div
     aria-hidden="true"
-    className="spinner-border ms-auto"
+    className="spinner spinner-border ms-auto"
     role="status"
   />
 </div>

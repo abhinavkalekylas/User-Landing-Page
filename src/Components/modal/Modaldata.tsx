@@ -1,4 +1,4 @@
-import "./Modaldata.css";
+import React from "react";
 import AddUserForm from "../adduser/Adduser";
 import ModalTemplate from "../modaltemplate/ModalTemplate";
 

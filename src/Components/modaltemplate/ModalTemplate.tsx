@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import "./ModalTemplate.css";
+import "./ModalTemplate.scss";
 
 const ModalTemplate = ({
   title_name,
@@ -11,7 +11,7 @@ const ModalTemplate = ({
   title_name: string;
   userModal: boolean;
   closeModal: () => void;
-  children: any;
+  children: React.ReactNode;
 }) => {
   return (
     <Modal show={userModal} onHide={closeModal}>

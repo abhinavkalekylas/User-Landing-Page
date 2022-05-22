@@ -2,7 +2,7 @@
 
 exports[`renders correctly UserList component 1`] = `
 <div
-  className="container"
+  className="userlist_container"
 >
   <Loader />
 </div>

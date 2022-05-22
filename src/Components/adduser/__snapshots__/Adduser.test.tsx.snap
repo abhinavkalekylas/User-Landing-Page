@@ -1,44 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post test 1`] = `
-<Router
-  location={
-    Object {
-      "hash": "",
-      "key": "default",
-      "pathname": "/",
-      "search": "",
-      "state": null,
-    }
-  }
-  navigationType="POP"
-  navigator={
-    Object {
-      "action": "POP",
-      "back": [Function],
-      "block": [Function],
-      "createHref": [Function],
-      "forward": [Function],
-      "go": [Function],
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "default",
-        "pathname": "/",
-        "search": "",
-        "state": null,
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <AddUser
-    handleClose={[MockFunction]}
-  />
-</Router>
-`;
-
 exports[`renders correctly Adduser component 1`] = `
 <BrowserRouter>
   <Router
@@ -77,7 +38,7 @@ exports[`renders correctly Adduser component 1`] = `
       closeModal={[MockFunction]}
     >
       <div
-        className="container"
+        className="adduser_container"
       >
         <Form
           className="form"
@@ -194,14 +155,14 @@ exports[`renders correctly Adduser component 1`] = `
                   className="d-flex"
                 >
                   <Button
-                    className="btn_add"
+                    className="adduser_btn btn_add"
                     color="success"
                     tag="button"
                     type="submit"
                   >
                     <button
                       aria-label={null}
-                      className="btn_add btn btn-success"
+                      className="adduser_btn btn_add btn btn-success"
                       onClick={[Function]}
                       type="submit"
                     >

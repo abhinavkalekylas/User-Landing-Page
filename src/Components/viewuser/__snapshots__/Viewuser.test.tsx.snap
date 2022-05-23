@@ -6,29 +6,33 @@ exports[`renders correctly Viewuser component 1`] = `
   title_name="View User"
   userModal={true}
 >
-  <p
-    className="user_data"
+  <div
+    className="viewuser_container"
   >
-    Name : 
-    shivam sharma
-  </p>
-  <p
-    className="user_data"
-  >
-    Email : 
-    shivam@gmail.com
-  </p>
-  <p
-    className="user_data"
-  >
-    Gender : 
-    male
-  </p>
-  <p
-    className="user_data"
-  >
-    Current Status : 
-    active
-  </p>
+    <p
+      className="user_data"
+    >
+      Name : 
+      shivam sharma
+    </p>
+    <p
+      className="user_data"
+    >
+      Email : 
+      shivam@gmail.com
+    </p>
+    <p
+      className="user_data"
+    >
+      Gender : 
+      male
+    </p>
+    <p
+      className="user_data"
+    >
+      Current Status : 
+      active
+    </p>
+  </div>
 </ModalTemplate>
 `;

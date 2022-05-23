@@ -1,5 +1,5 @@
 import React from "react";
-import "./Viewuser.css";
+import "./Viewuser.scss";
 import { User } from "../../modalfunction/Modal";
 import ModalTemplate from "../modaltemplate/ModalTemplate";
 
@@ -18,10 +18,12 @@ const Viewuser = ({
       userModal={viewUserModal}
       closeModal={closeModal}
     >
-      <p className="user_data">Name : {userData.name}</p>
-      <p className="user_data">Email : {userData.email}</p>
-      <p className="user_data">Gender : {userData.gender}</p>
-      <p className="user_data">Current Status : {userData.status}</p>
+      <div className="viewuser_container">
+        <p className="user_data">Name : {userData.name}</p>
+        <p className="user_data">Email : {userData.email}</p>
+        <p className="user_data">Gender : {userData.gender}</p>
+        <p className="user_data">Current Status : {userData.status}</p>
+      </div>
     </ModalTemplate>
   );
 };

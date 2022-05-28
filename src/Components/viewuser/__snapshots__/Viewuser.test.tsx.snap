@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Viewuser component 1`] = `
+<ModalTemplate
+  closeModal={[MockFunction]}
+  title_name="View User"
+  userModal={true}
+>
+  <div
+    className="viewuser_container"
+  >
+    <p
+      className="user_data"
+    >
+      Name : 
+      shivam sharma
+    </p>
+    <p
+      className="user_data"
+    >
+      Email : 
+      shivam@gmail.com
+    </p>
+    <p
+      className="user_data"
+    >
+      Gender : 
+      male
+    </p>
+    <p
+      className="user_data"
+    >
+      Current Status : 
+      active
+    </p>
+  </div>
+</ModalTemplate>
+`;

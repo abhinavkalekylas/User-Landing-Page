@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Modaldata component 1`] = `
+<ModalTemplate
+  closeModal={[MockFunction]}
+  title_name="Add User"
+  userModal={true}
+>
+  <AddUser
+    closeModal={[MockFunction]}
+  />
+</ModalTemplate>
+`;

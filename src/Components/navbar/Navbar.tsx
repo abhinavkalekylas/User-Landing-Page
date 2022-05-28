@@ -1,34 +1,43 @@
-import "./Navbar.css"
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import "./Navbar.scss";
+import Modaldata from "../modal/Modaldata";
+import { GenderType, StatusType } from "../../modalfunction/Modal";
 
 const Navbar = () => {
+  // user state to show/hide modal
+  const [addUserModal, setAddUserModal] = useState(false);
+
+  const closeModal = () => setAddUserModal(false);
+  const openModal = () => setAddUserModal(true);
   return (
-    <nav
-      className="navbar navbar-dark"
-    >
+    <nav className="navbar navbar-dark">
       <a href="/" className="navbar-brand ">
         User Landing Page
       </a>
 
-      <form className="form-inline">
+      <form className="nav_form form-inline">
         <select
-          className="form-select form-select-lg"
+          className="filter form-select form-select-lg"
           aria-label=".form-select-lg example"
         >
           <option value="none">None</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+          <option value={StatusType.ACTIVE}>Active</option>
+          <option value={StatusType.INACTIVE}>Inactive</option>
+          <option value={GenderType.MALE}>Male</option>
+          <option value={GenderType.FEMALE}>Female</option>
         </select>
         <div className="adduser">
-          <button
+          <Button
             color="success"
-            className="btn btn-success btn-outline-light"
+            className="btn_add btn btn-success btn-outline-light"
+            onClick={openModal}
           >
             Add User
-          </button>
+          </Button>
         </div>
       </form>
+      <Modaldata addUserModal={addUserModal} closeModal={closeModal} />
     </nav>
   );
 };

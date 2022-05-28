@@ -1,9 +1,0 @@
-.loader {
-    align-items: center;
-    display: flex;
-    margin-top: 2rem;
-}
-
-.loader > h2, div {
-    color: white;
-}

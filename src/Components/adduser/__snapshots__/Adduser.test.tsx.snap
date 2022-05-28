@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Adduser component 1`] = `
+<BrowserRouter>
+  <Router
+    location={
+      Object {
+        "hash": "",
+        "key": "default",
+        "pathname": "/",
+        "search": "",
+        "state": null,
+      }
+    }
+    navigationType="POP"
+    navigator={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <AddUser
+      closeModal={[MockFunction]}
+    >
+      <div
+        className="adduser_container"
+      >
+        <Form
+          className="form"
+          onSubmit={[Function]}
+          tag="form"
+        >
+          <form
+            className="form"
+            onSubmit={[Function]}
+          >
+            <FormGroup
+              tag="div"
+            >
+              <div
+                className="mb-3"
+              >
+                <div
+                  className="input input-group input-group-lg"
+                >
+                  <label
+                    className="adduser_label"
+                  >
+                    Name :
+                  </label>
+                  <input
+                    aria-describedby="inputGroup-sizing-lg"
+                    aria-label="Sizing example input"
+                    autoComplete="off"
+                    className="username form-control my-2"
+                    name="name"
+                    onChange={[Function]}
+                    placeholder="Enter username here"
+                    required={true}
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="input input-group input-group-lg"
+                >
+                  <label
+                    className="adduser_label"
+                  >
+                    Email :
+                  </label>
+                  <input
+                    aria-describedby="inputGroup-sizing-lg"
+                    aria-label="Sizing example input"
+                    autoComplete="off"
+                    className="email form-control my-2"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="Enter email id here"
+                    required={true}
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="input input-group input-group-lg"
+                >
+                  <label
+                    className="adduser_label"
+                  >
+                    Gender :
+                  </label>
+                  <select
+                    aria-label=".form-select-lg example"
+                    className="gender form-select form-select-lg mb-3"
+                    name="gender"
+                    onChange={[Function]}
+                    value="male"
+                  >
+                    <option
+                      value="male"
+                    >
+                      Male
+                    </option>
+                    <option
+                      value="female"
+                    >
+                      Female
+                    </option>
+                  </select>
+                </div>
+                <div
+                  className="input input-group input-group-lg"
+                >
+                  <label
+                    className="adduser_label"
+                  >
+                    Status :
+                  </label>
+                  <select
+                    aria-label=".form-select-lg example"
+                    className="status form-select form-select-lg mb-3"
+                    name="status"
+                    onChange={[Function]}
+                    value="active"
+                  >
+                    <option
+                      value="active"
+                    >
+                      Active
+                    </option>
+                    <option
+                      value="inactive"
+                    >
+                      Inactive
+                    </option>
+                  </select>
+                </div>
+                <div
+                  className="d-flex"
+                >
+                  <Button
+                    className="adduser_btn btn_add"
+                    color="success"
+                    tag="button"
+                    type="submit"
+                  >
+                    <button
+                      aria-label={null}
+                      className="adduser_btn btn_add btn btn-success"
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      Add User
+                    </button>
+                  </Button>
+                  <Button
+                    className="reset_add"
+                    color="primary"
+                    onClick={[Function]}
+                    tag="button"
+                  >
+                    <button
+                      aria-label={null}
+                      className="reset_add btn btn-primary"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Reset
+                    </button>
+                  </Button>
+                </div>
+              </div>
+            </FormGroup>
+          </form>
+        </Form>
+      </div>
+    </AddUser>
+  </Router>
+</BrowserRouter>
+`;

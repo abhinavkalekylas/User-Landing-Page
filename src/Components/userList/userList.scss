@@ -1,0 +1,49 @@
+@mixin btn-margin{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+@mixin rightRadius {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+@mixin leftRadius {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.userlist_container {
+    .view-button {
+       @include btn-margin;
+    }
+
+    .edit-button {
+        @include btn-margin;
+    }
+
+    .delete-button {
+       @include btn-margin;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 1rem;
+        border-collapse: separate;
+        border-spacing: 0 1rem;  
+    }
+
+    .action {
+        width: 30%;
+        @include rightRadius;
+    }
+
+    .user_name, .title_name {
+        @include leftRadius;
+    }
+
+    .action_buttons {
+        @include rightRadius;
+    }
+}

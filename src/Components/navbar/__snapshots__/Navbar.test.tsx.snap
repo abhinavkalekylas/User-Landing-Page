@@ -11,11 +11,11 @@ exports[`renders correctly App component 1`] = `
     User Landing Page
   </a>
   <form
-    className="form-inline"
+    className="nav_form form-inline"
   >
     <select
       aria-label=".form-select-lg example"
-      className="form-select form-select-lg"
+      className="filter form-select form-select-lg"
     >
       <option
         value="none"
@@ -46,13 +46,21 @@ exports[`renders correctly App component 1`] = `
     <div
       className="adduser"
     >
-      <button
-        className="btn btn-success btn-outline-light"
+      <Button
+        active={false}
+        className="btn_add btn btn-success btn-outline-light"
         color="success"
+        disabled={false}
+        onClick={[Function]}
+        variant="primary"
       >
         Add User
-      </button>
+      </Button>
     </div>
   </form>
+  <Modaldata
+    addUserModal={false}
+    closeModal={[Function]}
+  />
 </nav>
 `;

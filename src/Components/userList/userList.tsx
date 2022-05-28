@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
-import "./userList.css"
-import Loader from "../loader/Loader"
-
+import "./userList.scss";
+import { User, GenderType, StatusType, token } from "../../modalfunction/Modal";
+import Loader from "../loader/Loader";
+import Viewuser from "../viewuser/Viewuser";
 
 const UserList = () => {
+  const userData: User = {
+    id: 0,
+    name: "",
+    email: "",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
+  };
+
   // All users state
-  const [users, setUsers] = useState([
-    {
-      id: 0,
-      name: "",
-      email: "",
-      gender: "",
-      status: "",
-    },
-  ]);
+  const [users, setUsers] = useState([userData]);
   const [load, setLoad] = useState(true);
   const [error, setError] = useState(false);
 
+  const [viewUserModal, setViewUserModal] = useState(false);
+  const [updateUser, setUpdateUser] = useState(userData);
+
+  const closeModal = () => setViewUserModal(false);
+  const openModal = () => setViewUserModal(true);
+
   const getAllUsers = async () => {
     try {
-      const token =
-        "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca";
       const res = await axios("https://gorest.co.in/public/v2/users", {
         method: "GET",
         headers: {
@@ -32,15 +37,15 @@ const UserList = () => {
       });
 
       // Contains all users data
-      const data: {id:number,name:string,email:string,gender:string,status:string}[] = res.data;
+      const data: [User] = res.data;
 
-      setLoad(false)
+      setLoad(false);
 
       // Update users
       setUsers(data);
     } catch (error) {
       setError(true);
-      console.log("Error while getting all users ", error); 
+      console.log("Error while getting all users ", error);
     }
   };
 
@@ -49,46 +54,63 @@ const UserList = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="userlist_container">
       {error ? (
         <h2>This page is under develop. We will sure to give an update</h2>
-      ) : (load ? (<Loader />) : (
-      <table className="table table-light">
-        <thead>
-          <tr>
-            <th className="title_name" scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th className="action" scope="col">
-              Actions
-            </th>
-          </tr>
-        </thead>
-        {users.length === 0 ? (
-          <h1>List is empty</h1>
-        ) : (
-          <tbody >
-            {users.map((user) => {
-              return (
-                <tr className="table_row" key={String(user.id)}>
-                  <td className="user_name">{user.name}</td>
-                  <td className="user_email">{user.email}</td>
-                  <td className="action_buttons">
-                    <Button color="info" className="view-button text-white">
-                      View User
-                    </Button>
-                    <Button color="primary" className="edit-button">
-                      Edit User
-                    </Button>
-                    <Button color="danger" className="delete-button">
-                      Delete User
-                    </Button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        )}
-      </table>))}  
+      ) : load ? (
+        <Loader />
+      ) : (
+        <table className="table table-light">
+          <thead>
+            <tr>
+              <th className="title_name" scope="col">
+                Name
+              </th>
+              <th scope="col">Email</th>
+              <th className="action" scope="col">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          {users.length === 0 ? (
+            <h1>List is empty</h1>
+          ) : (
+            <tbody>
+              {users.map((user) => {
+                return (
+                  <tr className="table_row" key={String(user.id)}>
+                    <td className="user_name">{user.name}</td>
+                    <td className="user_email">{user.email}</td>
+                    <td className="action_buttons">
+                      <Button
+                        onClick={() => {
+                          openModal();
+                          setUpdateUser(user);
+                        }}
+                        color="info"
+                        className="view-button text-white"
+                      >
+                        View User
+                      </Button>
+                      <Viewuser
+                        userData={updateUser}
+                        viewUserModal={viewUserModal}
+                        closeModal={closeModal}
+                      />
+                      <Button color="primary" className="edit-button">
+                        Edit User
+                      </Button>
+                      <Button color="danger" className="delete-button">
+                        Delete User
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          )}
+        </table>
+      )}
     </div>
   );
 };

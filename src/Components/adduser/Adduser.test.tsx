@@ -15,7 +15,7 @@ beforeEach(() => {
   };
   wrapper = mount(
     <Router>
-      <Adduser {...props}></Adduser>
+      <Adduser {...props} />
     </Router>
   );
 });

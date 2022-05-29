@@ -2,9 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import axios from "axios";
 import "./userList.scss";
-import { User, GenderType, StatusType, token } from "../../modalfunction/Modal";
+import {
+  User,
+  GenderType,
+  StatusType,
+  token,
+  chooseModalType,
+} from "../../modalfunction/Modal";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
+import Edituser from "../edituser/Edituser";
+import { EnumType } from "typescript";
 
 const UserList = () => {
   const userData: User = {
@@ -21,10 +29,18 @@ const UserList = () => {
   const [error, setError] = useState(false);
 
   const [viewUserModal, setViewUserModal] = useState(false);
+  const [editUserModal, setEditUserModal] = useState(false);
   const [updateUser, setUpdateUser] = useState(userData);
 
-  const closeModal = () => setViewUserModal(false);
-  const openModal = () => setViewUserModal(true);
+  const openModal = (modalType: number) => {
+    if (modalType === chooseModalType.viewModal) setViewUserModal(true);
+    else if (modalType === chooseModalType.editModal) setEditUserModal(true);
+  };
+
+  const closeModal = () => {
+    setViewUserModal(false);
+    setEditUserModal(false);
+  };
 
   const getAllUsers = async () => {
     try {
@@ -84,7 +100,7 @@ const UserList = () => {
                     <td className="action_buttons">
                       <Button
                         onClick={() => {
-                          openModal();
+                          openModal(chooseModalType.viewModal);
                           setUpdateUser(user);
                         }}
                         color="info"
@@ -97,9 +113,21 @@ const UserList = () => {
                         viewUserModal={viewUserModal}
                         closeModal={closeModal}
                       />
-                      <Button color="primary" className="edit-button">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.editModal);
+                          setUpdateUser(user);
+                        }}
+                        color="primary"
+                        className="edit-button"
+                      >
                         Edit User
                       </Button>
+                      <Edituser
+                        userData={updateUser}
+                        editUserModal={editUserModal}
+                        closeModal={closeModal}
+                      />
                       <Button color="danger" className="delete-button">
                         Delete User
                       </Button>

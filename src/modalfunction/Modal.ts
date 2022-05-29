@@ -26,4 +26,9 @@ export const validateEmail = (email: string) => {
 
 export const token = "3f30438c7b3212b121ae63e52bae216ca2bc11b700c8aa29cb0891d61cc96fca"
 
+export enum chooseModalType {
+  viewModal,
+  editModal
+}
+
 

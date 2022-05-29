@@ -72,12 +72,12 @@ it("post test", async () => {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   });
-  const event1 = { target: { name: "email", value: "shivam@gmail.com" } };
-  wrapper.find(".email").simulate("change", event1);
+  const eventEmail = { target: { name: "email", value: "shivam@gmail.com" } };
+  wrapper.find(".email").simulate("change", eventEmail);
   expect(wrapper.find(".email").props().value).toEqual("shivam@gmail.com");
 
-  const event = { target: { name: "name", value: "shivam" } };
-  wrapper.find(".username").simulate("change", event);
+  const eventInput = { target: { name: "name", value: "shivam" } };
+  wrapper.find(".username").simulate("change", eventInput);
   expect(wrapper.find(".username").props().value).toEqual("shivam");
 
   wrapper.find("Button.adduser_btn").simulate("click");

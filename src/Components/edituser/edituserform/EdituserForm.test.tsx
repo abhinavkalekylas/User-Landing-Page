@@ -1,11 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { BrowserRouter as Router } from "react-router-dom";
-import { GenderType, StatusType, token, User } from "../../modalfunction/Modal";
-import EditUser from "./Edituser";
+import {
+  GenderType,
+  StatusType,
+  token,
+  User,
+} from "../../../modalfunction/Modal";
+import EdituserForm from "./EdituserForm";
+import EditUserForm from "./EdituserForm";
 
 var MockAdapter = require("axios-mock-adapter");
 const userData: User = {
@@ -19,19 +25,18 @@ const userData: User = {
 let wrapper: any;
 const props = {
   userData,
-  editUserModal: true,
   closeModal: jest.fn(),
 };
 beforeEach(() => {
   wrapper = mount(
     <Router>
-      <EditUser {...props} />
+      <EdituserForm {...props} />
     </Router>
   );
 });
 
 // snapshot testing
-it("renders correctly Edituser component", () => {
+it("renders correctly EdituserForm component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
@@ -69,40 +74,44 @@ it("test status select input", () => {
 it("put test", async () => {
   var mock = new MockAdapter(axios);
 
-  const user_data: User = {
+  const user_data_before: User = {
     id: 123,
     name: "Harinarayan Abbott",
     email: "abbott_harinarayan@collins.info",
     gender: GenderType.MALE,
     status: StatusType.ACTIVE,
   };
+  const user_data_after: User = {
+    id: 123,
+    name: "rinarayan Abbott",
+    email: "bott_harinarayan@collins.info",
+    gender: GenderType.MALE,
+    status: StatusType.ACTIVE,
+  };
 
-  mock.onPost("https://gorest.co.in/public/v2/users/").reply(200, user_data, {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  });
-  const event1 = { target: { name: "email", value: "shivam@gmail.com" } };
-  wrapper.find(".email").simulate("change", event1);
-  expect(wrapper.find(".email").props().value).toEqual("shivam@gmail.com");
+  mock
+    .onGet("https://gorest.co.in/public/v2/users")
+    .reply(200, user_data_before, {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    });
+  // console.log(mock.handlers.get);
+  mock
+    .onPut("https://gorest.co.in/public/v2/users/")
+    .reply(200, user_data_after, {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    });
+  console.log(mock.handlers.get);
+  console.log(mock.handlers.put);
+  console.log(mock.handlers.put[0][4]);
 
-  const event = { target: { name: "name", value: "shivam" } };
-  wrapper.find(".username").simulate("change", event);
-  expect(wrapper.find(".username").props().value).toEqual("shivam");
-
-  wrapper.find("Button.adduser_btn").simulate("click");
+  expect(mock.handlers.put[0][4]).toBe(user_data_after);
 });
 
 // submit button
 it("should be able to submit the form", () => {
-  const component = render(
-    <Router>
-      <EditUser {...props} />
-    </Router>
-  );
-  const email = screen.getByPlaceholderText("Enter email id here");
-  const button = screen.getAllByRole("button");
-  userEvent.type(email, "abhi@gmail.com");
-  userEvent.click(button[0]);
-  const user = screen.getByDisplayValue("abhi@gmail.com");
-  expect(user).toBeInTheDocument();
+  console.log(wrapper.find(".edituser_btn"));
+  wrapper.find(".edituser_btn").at(0).simulate("click");
+  expect(props.closeModal).toHaveBeenCalled();
 });

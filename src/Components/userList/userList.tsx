@@ -12,7 +12,6 @@ import {
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
-import { EnumType } from "typescript";
 
 const UserList = () => {
   const userData: User = {

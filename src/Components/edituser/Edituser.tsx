@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Button } from "reactstrap";
 import axios from "axios";
 import { token } from "../../modalfunction/Modal";
+import "./Edituser.scss";
 import {
   User,
   GenderType,

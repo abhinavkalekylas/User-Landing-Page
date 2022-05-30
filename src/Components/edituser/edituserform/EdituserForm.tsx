@@ -55,7 +55,7 @@ const EdituserForm = ({
         navigate(0);
       } catch (error) {
         setError(true);
-        console.log("Error while creating user ", error);
+        console.log("Error while editing user ", error);
       }
     }
   };

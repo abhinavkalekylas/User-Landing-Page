@@ -11,7 +11,6 @@ import {
   User,
 } from "../../../modalfunction/Modal";
 import EdituserForm from "./EdituserForm";
-import EditUserForm from "./EdituserForm";
 
 var MockAdapter = require("axios-mock-adapter");
 const userData: User = {
@@ -107,11 +106,4 @@ it("put test", async () => {
   console.log(mock.handlers.put[0][4]);
 
   expect(mock.handlers.put[0][4]).toBe(user_data_after);
-});
-
-// submit button
-it("should be able to submit the form", () => {
-  console.log(wrapper.find(".edituser_btn"));
-  wrapper.find(".edituser_btn").at(0).simulate("click");
-  expect(props.closeModal).toHaveBeenCalled();
 });

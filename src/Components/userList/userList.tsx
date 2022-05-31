@@ -12,6 +12,7 @@ import {
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
+import { toast } from "react-toastify";
 
 const UserList = () => {
   const userData: User = {
@@ -32,8 +33,9 @@ const UserList = () => {
   const [updateUser, setUpdateUser] = useState(userData);
 
   const openModal = (modalType: number) => {
-    if (modalType === chooseModalType.viewModal) setViewUserModal(true);
-    else if (modalType === chooseModalType.editModal) setEditUserModal(true);
+    modalType === chooseModalType.viewModal
+      ? setViewUserModal(true)
+      : setEditUserModal(true);
   };
 
   const closeModal = () => {
@@ -60,6 +62,15 @@ const UserList = () => {
       setUsers(data);
     } catch (error) {
       setError(true);
+      toast.error("Error while getting all users", {
+        position: "top-right",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       console.log("Error while getting all users ", error);
     }
   };

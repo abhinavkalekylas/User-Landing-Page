@@ -101,9 +101,9 @@ it("put test", async () => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     });
-  console.log(mock.handlers.get);
-  console.log(mock.handlers.put);
-  console.log(mock.handlers.put[0][4]);
+  // console.log(mock.handlers.get);
+  // console.log(mock.handlers.put);
+  // console.log(mock.handlers.put[0][4]);
 
   expect(mock.handlers.put[0][4]).toBe(user_data_after);
 });

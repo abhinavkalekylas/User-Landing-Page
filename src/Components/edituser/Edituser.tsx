@@ -13,13 +13,15 @@ const EditUser = ({
   closeModal: () => void;
 }) => {
   return (
-    <ModalTemplate
-      title_name={"Edit User"}
-      userModal={editUserModal}
-      closeModal={closeModal}
-    >
-      <EdituserForm userData={userData} closeModal={closeModal} />
-    </ModalTemplate>
+    <>
+      <ModalTemplate
+        title_name={"Edit User"}
+        userModal={editUserModal}
+        closeModal={closeModal}
+      >
+        <EdituserForm userData={userData} closeModal={closeModal} />
+      </ModalTemplate>
+    </>
   );
 };
 

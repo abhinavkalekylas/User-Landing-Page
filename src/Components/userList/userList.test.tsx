@@ -5,9 +5,13 @@ import { act } from "react-dom/test-utils";
 import { token } from "../../modalfunction/Modal";
 import UserList from "./userList";
 
+let wrapper: any;
+beforeEach(() => {
+  wrapper = shallow(<UserList />);
+});
+
 // snapshot testing
 it("renders correctly UserList component", () => {
-  const wrapper = shallow(<UserList />);
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 

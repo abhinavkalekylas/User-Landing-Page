@@ -1,5 +1,4 @@
 import React from "react";
-import "./Adduser.scss";
 import { User, GenderType, StatusType } from "../../modalfunction/Modal";
 import UserInfo from "../userinfo/UserInfo";
 
@@ -14,7 +13,7 @@ const AddUser = ({ closeModal }: { closeModal: () => void }) => {
 
   return (
     <>
-      <UserInfo userData={userData} operation={"add"} />
+      <UserInfo userData={userData} operation={"add"} closeModal={closeModal} />
     </>
   );
 };

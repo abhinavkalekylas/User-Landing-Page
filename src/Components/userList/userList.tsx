@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
-import axios from "axios";
 import "./userList.scss";
 import {
   User,
   GenderType,
   StatusType,
-  token,
   chooseModalType,
 } from "../../modalfunction/Modal";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
 import { toast } from "react-toastify";
+import getUser from "./getUser";
 
 const UserList = () => {
   const userData: User = {
@@ -45,16 +44,7 @@ const UserList = () => {
 
   const getAllUsers = async () => {
     try {
-      const res = await axios("https://gorest.co.in/public/v2/users", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      // Contains all users data
-      const data: [User] = res.data;
+      const data: [User] = await (await getUser()).data;
 
       setLoad(false);
 
@@ -64,7 +54,7 @@ const UserList = () => {
       setError(true);
       toast.error("Error while getting all users", {
         position: "top-right",
-        autoClose: 10000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -129,7 +119,7 @@ const UserList = () => {
                           setUpdateUser(user);
                         }}
                         color="primary"
-                        className="edit-button"
+                        className="edit_btn edit-button"
                       >
                         Edit User
                       </Button>

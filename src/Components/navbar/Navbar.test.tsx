@@ -8,6 +8,10 @@ beforeEach(() => {
   wrapper = shallow(<Navbar />);
 });
 
+afterEach(() => {
+  jest.resetAllMocks();
+});
+
 it("check nav element", () => {
   expect(wrapper.find("nav")).toBeTruthy();
 });
@@ -26,4 +30,10 @@ it("test filter select input", () => {
   expect(wrapper.find(".filter").props().children.at(1).props.value).toBe(
     StatusType.ACTIVE
   );
+});
+
+it("On click add user test", () => {
+  //call props boolean
+  wrapper.find(".btn_add").simulate("click");
+  expect(expect(wrapper.find("Modaldata").props().addUserModal).toBe(true));
 });

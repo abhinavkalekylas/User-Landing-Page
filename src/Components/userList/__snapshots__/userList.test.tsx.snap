@@ -4,6 +4,8 @@ exports[`renders correctly UserList component 1`] = `
 <div
   className="userlist_container"
 >
-  <Loader />
+  <h2>
+    This page is under develop. We will sure to give an update
+  </h2>
 </div>
 `;

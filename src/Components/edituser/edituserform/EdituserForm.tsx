@@ -1,5 +1,4 @@
 import React from "react";
-import "./EdituserForm.scss";
 import { User } from "../../../modalfunction/Modal";
 import "../../userinfo/UserInfo";
 import UserInfo from "../../userinfo/UserInfo";
@@ -13,7 +12,11 @@ const EdituserForm = ({
 }) => {
   return (
     <>
-      <UserInfo userData={userData} operation={"edit"} />
+      <UserInfo
+        userData={userData}
+        operation={"edit"}
+        closeModal={closeModal}
+      />
     </>
   );
 };

@@ -14,7 +14,7 @@ const App = () => {
         <div className="container">
           <Navbar />
           <UserList />
-          <ToastContainer autoClose={8000} />
+          <ToastContainer />
         </div>
       </Router>
     </>

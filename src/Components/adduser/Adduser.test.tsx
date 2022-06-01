@@ -80,7 +80,7 @@ it("post test", async () => {
   wrapper.find(".username").simulate("change", eventInput);
   expect(wrapper.find(".username").props().value).toEqual("shivam");
 
-  wrapper.find("Button.adduser_btn").simulate("click");
+  wrapper.find("Button.userinfo_btn").simulate("click");
 });
 
 // submit button

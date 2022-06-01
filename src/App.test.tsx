@@ -24,6 +24,6 @@ it("renders correctly App component", () => {
   //   Authorization: `Bearer ${token}`,
   // });
 
-  const wrapper = mount(<App />);
+  const wrapper = shallow(<App />);
   expect(toJson(wrapper)).toMatchSnapshot();
 });

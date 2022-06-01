@@ -1,0 +1,1010 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Edituser component 1`] = `
+<BrowserRouter>
+  <Router
+    location={
+      Object {
+        "hash": "",
+        "key": "default",
+        "pathname": "/",
+        "search": "",
+        "state": null,
+      }
+    }
+    navigationType="POP"
+    navigator={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <EditUser
+      closeModal={[MockFunction]}
+      editUserModal={true}
+      userData={
+        Object {
+          "email": "shivam@gmail.com",
+          "gender": "male",
+          "id": 0,
+          "name": "shivam sharma",
+          "status": "active",
+        }
+      }
+    >
+      <ModalTemplate
+        closeModal={[MockFunction]}
+        title_name="Edit User"
+        userModal={true}
+      >
+        <Modal
+          animation={true}
+          autoFocus={true}
+          backdrop={true}
+          dialogAs={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            }
+          }
+          enforceFocus={true}
+          keyboard={true}
+          onHide={[MockFunction]}
+          restoreFocus={true}
+          show={true}
+        >
+          <Modal
+            autoFocus={true}
+            backdrop={true}
+            backdropTransition={[Function]}
+            enforceFocus={true}
+            keyboard={true}
+            manager={
+              BootstrapModalManager {
+                "handleContainerOverflow": true,
+                "isRTL": false,
+                "modals": Array [
+                  Object {
+                    "add": [Function],
+                    "backdrop": <div
+                      class="fade modal-backdrop show"
+                    />,
+                    "dialog": <div
+                      aria-modal="true"
+                      class="fade modal show"
+                      role="dialog"
+                      style="display: block; padding-right: 0px;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="modal-dialog"
+                      >
+                        <div
+                          class="modal-content"
+                        >
+                          <div
+                            class="modal-header"
+                          >
+                            <div
+                              class="title text-black modal-title h4"
+                            >
+                              Edit User
+                            </div>
+                            <button
+                              aria-label="Close"
+                              class="btn-close"
+                              type="button"
+                            />
+                          </div>
+                          <div
+                            class="modal-body"
+                          >
+                            <div
+                              class="userinfo_container"
+                            >
+                              <form
+                                class="form"
+                              >
+                                <div
+                                  class="mb-3"
+                                >
+                                  <div
+                                    class="input input-group input-group-lg"
+                                  >
+                                    <label
+                                      class="userinfo_label"
+                                    >
+                                      Name :
+                                    </label>
+                                    <input
+                                      aria-describedby="inputGroup-sizing-lg"
+                                      aria-label="Sizing example input"
+                                      autocomplete="off"
+                                      class="username form-control my-2"
+                                      name="name"
+                                      placeholder="Enter username here"
+                                      required=""
+                                      type="text"
+                                      value="shivam sharma"
+                                    />
+                                  </div>
+                                  <div
+                                    class="input input-group input-group-lg"
+                                  >
+                                    <label
+                                      class="userinfo_label"
+                                    >
+                                      Email :
+                                    </label>
+                                    <input
+                                      aria-describedby="inputGroup-sizing-lg"
+                                      aria-label="Sizing example input"
+                                      autocomplete="off"
+                                      class="email form-control my-2"
+                                      name="email"
+                                      placeholder="Enter email id here"
+                                      required=""
+                                      type="text"
+                                      value="shivam@gmail.com"
+                                    />
+                                  </div>
+                                  <div
+                                    class="input input-group input-group-lg"
+                                  >
+                                    <label
+                                      class="userinfo_label"
+                                    >
+                                      Gender :
+                                    </label>
+                                    <select
+                                      aria-label=".form-select-lg example"
+                                      class="gender form-select form-select-lg mb-3"
+                                      name="gender"
+                                    >
+                                      <option
+                                        value="male"
+                                      >
+                                        Male
+                                      </option>
+                                      <option
+                                        value="female"
+                                      >
+                                        Female
+                                      </option>
+                                    </select>
+                                  </div>
+                                  <div
+                                    class="input input-group input-group-lg"
+                                  >
+                                    <label
+                                      class="userinfo_label"
+                                    >
+                                      Status :
+                                    </label>
+                                    <select
+                                      aria-label=".form-select-lg example"
+                                      class="status form-select form-select-lg mb-3"
+                                      name="status"
+                                    >
+                                      <option
+                                        value="active"
+                                      >
+                                        Active
+                                      </option>
+                                      <option
+                                        value="inactive"
+                                      >
+                                        Inactive
+                                      </option>
+                                    </select>
+                                  </div>
+                                  <div
+                                    class="d-flex"
+                                  >
+                                    <button
+                                      class="userinfo_btn btn btn-success"
+                                      type="submit"
+                                    >
+                                      edit
+                                       User
+                                    </button>
+                                    <button
+                                      class="reset_btn btn btn-primary"
+                                      type="button"
+                                    >
+                                      Reset
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <div
+                            class="modal-footer"
+                          >
+                            <button
+                              class="close_btn btn btn-primary"
+                              type="button"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>,
+                    "isTopModal": [Function],
+                    "remove": [Function],
+                    "setBackdropRef": [Function],
+                    "setDialogRef": [Function],
+                  },
+                ],
+                "ownerDocument": undefined,
+                "state": Object {
+                  "scrollBarWidth": 1024,
+                  "style": Object {
+                    "overflow": "",
+                    "paddingRight": "",
+                  },
+                },
+              }
+            }
+            onEnter={[Function]}
+            onEntering={[Function]}
+            onEscapeKeyDown={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onHide={[MockFunction]}
+            renderBackdrop={[Function]}
+            renderDialog={[Function]}
+            restoreFocus={true}
+            show={true}
+            transition={[Function]}
+          >
+            <Portal
+              containerInfo={
+                <body
+                  class="modal-open"
+                  data-rr-ui-modal-open=""
+                  style="padding-right: 1024px;"
+                >
+                  <div
+                    class="fade modal-backdrop show"
+                  />
+                  <div
+                    aria-modal="true"
+                    class="fade modal show"
+                    role="dialog"
+                    style="display: block; padding-right: 0px;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="modal-dialog"
+                    >
+                      <div
+                        class="modal-content"
+                      >
+                        <div
+                          class="modal-header"
+                        >
+                          <div
+                            class="title text-black modal-title h4"
+                          >
+                            Edit User
+                          </div>
+                          <button
+                            aria-label="Close"
+                            class="btn-close"
+                            type="button"
+                          />
+                        </div>
+                        <div
+                          class="modal-body"
+                        >
+                          <div
+                            class="userinfo_container"
+                          >
+                            <form
+                              class="form"
+                            >
+                              <div
+                                class="mb-3"
+                              >
+                                <div
+                                  class="input input-group input-group-lg"
+                                >
+                                  <label
+                                    class="userinfo_label"
+                                  >
+                                    Name :
+                                  </label>
+                                  <input
+                                    aria-describedby="inputGroup-sizing-lg"
+                                    aria-label="Sizing example input"
+                                    autocomplete="off"
+                                    class="username form-control my-2"
+                                    name="name"
+                                    placeholder="Enter username here"
+                                    required=""
+                                    type="text"
+                                    value="shivam sharma"
+                                  />
+                                </div>
+                                <div
+                                  class="input input-group input-group-lg"
+                                >
+                                  <label
+                                    class="userinfo_label"
+                                  >
+                                    Email :
+                                  </label>
+                                  <input
+                                    aria-describedby="inputGroup-sizing-lg"
+                                    aria-label="Sizing example input"
+                                    autocomplete="off"
+                                    class="email form-control my-2"
+                                    name="email"
+                                    placeholder="Enter email id here"
+                                    required=""
+                                    type="text"
+                                    value="shivam@gmail.com"
+                                  />
+                                </div>
+                                <div
+                                  class="input input-group input-group-lg"
+                                >
+                                  <label
+                                    class="userinfo_label"
+                                  >
+                                    Gender :
+                                  </label>
+                                  <select
+                                    aria-label=".form-select-lg example"
+                                    class="gender form-select form-select-lg mb-3"
+                                    name="gender"
+                                  >
+                                    <option
+                                      value="male"
+                                    >
+                                      Male
+                                    </option>
+                                    <option
+                                      value="female"
+                                    >
+                                      Female
+                                    </option>
+                                  </select>
+                                </div>
+                                <div
+                                  class="input input-group input-group-lg"
+                                >
+                                  <label
+                                    class="userinfo_label"
+                                  >
+                                    Status :
+                                  </label>
+                                  <select
+                                    aria-label=".form-select-lg example"
+                                    class="status form-select form-select-lg mb-3"
+                                    name="status"
+                                  >
+                                    <option
+                                      value="active"
+                                    >
+                                      Active
+                                    </option>
+                                    <option
+                                      value="inactive"
+                                    >
+                                      Inactive
+                                    </option>
+                                  </select>
+                                </div>
+                                <div
+                                  class="d-flex"
+                                >
+                                  <button
+                                    class="userinfo_btn btn btn-success"
+                                    type="submit"
+                                  >
+                                    edit
+                                     User
+                                  </button>
+                                  <button
+                                    class="reset_btn btn btn-primary"
+                                    type="button"
+                                  >
+                                    Reset
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div
+                          class="modal-footer"
+                        >
+                          <button
+                            class="close_btn btn btn-primary"
+                            type="button"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </body>
+              }
+            >
+              <BackdropTransition
+                appear={true}
+                in={true}
+              >
+                <Fade
+                  appear={true}
+                  in={true}
+                  mountOnEnter={false}
+                  timeout={null}
+                  unmountOnExit={false}
+                >
+                  <ForwardRef
+                    addEndListener={[Function]}
+                    appear={true}
+                    childRef={[Function]}
+                    in={true}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    timeout={null}
+                    unmountOnExit={false}
+                  >
+                    <Transition
+                      addEndListener={[Function]}
+                      appear={true}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={false}
+                      nodeRef={
+                        Object {
+                          "current": <div
+                            class="fade modal-backdrop show"
+                          />,
+                        }
+                      }
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={null}
+                      unmountOnExit={false}
+                    >
+                      <div
+                        className="fade modal-backdrop show"
+                        onClick={[Function]}
+                      />
+                    </Transition>
+                  </ForwardRef>
+                </Fade>
+              </BackdropTransition>
+              <DialogTransition
+                appear={true}
+                in={true}
+                onEnter={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                unmountOnExit={true}
+              >
+                <Fade
+                  appear={true}
+                  in={true}
+                  mountOnEnter={false}
+                  onEnter={[Function]}
+                  onEntering={[Function]}
+                  onExit={[Function]}
+                  onExited={[Function]}
+                  timeout={null}
+                  unmountOnExit={true}
+                >
+                  <ForwardRef
+                    addEndListener={[Function]}
+                    appear={true}
+                    childRef={[Function]}
+                    in={true}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    timeout={null}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      addEndListener={[Function]}
+                      appear={true}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={false}
+                      nodeRef={
+                        Object {
+                          "current": <div
+                            aria-modal="true"
+                            class="fade modal show"
+                            role="dialog"
+                            style="display: block; padding-right: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="modal-dialog"
+                            >
+                              <div
+                                class="modal-content"
+                              >
+                                <div
+                                  class="modal-header"
+                                >
+                                  <div
+                                    class="title text-black modal-title h4"
+                                  >
+                                    Edit User
+                                  </div>
+                                  <button
+                                    aria-label="Close"
+                                    class="btn-close"
+                                    type="button"
+                                  />
+                                </div>
+                                <div
+                                  class="modal-body"
+                                >
+                                  <div
+                                    class="userinfo_container"
+                                  >
+                                    <form
+                                      class="form"
+                                    >
+                                      <div
+                                        class="mb-3"
+                                      >
+                                        <div
+                                          class="input input-group input-group-lg"
+                                        >
+                                          <label
+                                            class="userinfo_label"
+                                          >
+                                            Name :
+                                          </label>
+                                          <input
+                                            aria-describedby="inputGroup-sizing-lg"
+                                            aria-label="Sizing example input"
+                                            autocomplete="off"
+                                            class="username form-control my-2"
+                                            name="name"
+                                            placeholder="Enter username here"
+                                            required=""
+                                            type="text"
+                                            value="shivam sharma"
+                                          />
+                                        </div>
+                                        <div
+                                          class="input input-group input-group-lg"
+                                        >
+                                          <label
+                                            class="userinfo_label"
+                                          >
+                                            Email :
+                                          </label>
+                                          <input
+                                            aria-describedby="inputGroup-sizing-lg"
+                                            aria-label="Sizing example input"
+                                            autocomplete="off"
+                                            class="email form-control my-2"
+                                            name="email"
+                                            placeholder="Enter email id here"
+                                            required=""
+                                            type="text"
+                                            value="shivam@gmail.com"
+                                          />
+                                        </div>
+                                        <div
+                                          class="input input-group input-group-lg"
+                                        >
+                                          <label
+                                            class="userinfo_label"
+                                          >
+                                            Gender :
+                                          </label>
+                                          <select
+                                            aria-label=".form-select-lg example"
+                                            class="gender form-select form-select-lg mb-3"
+                                            name="gender"
+                                          >
+                                            <option
+                                              value="male"
+                                            >
+                                              Male
+                                            </option>
+                                            <option
+                                              value="female"
+                                            >
+                                              Female
+                                            </option>
+                                          </select>
+                                        </div>
+                                        <div
+                                          class="input input-group input-group-lg"
+                                        >
+                                          <label
+                                            class="userinfo_label"
+                                          >
+                                            Status :
+                                          </label>
+                                          <select
+                                            aria-label=".form-select-lg example"
+                                            class="status form-select form-select-lg mb-3"
+                                            name="status"
+                                          >
+                                            <option
+                                              value="active"
+                                            >
+                                              Active
+                                            </option>
+                                            <option
+                                              value="inactive"
+                                            >
+                                              Inactive
+                                            </option>
+                                          </select>
+                                        </div>
+                                        <div
+                                          class="d-flex"
+                                        >
+                                          <button
+                                            class="userinfo_btn btn btn-success"
+                                            type="submit"
+                                          >
+                                            edit
+                                             User
+                                          </button>
+                                          <button
+                                            class="reset_btn btn btn-primary"
+                                            type="button"
+                                          >
+                                            Reset
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                                <div
+                                  class="modal-footer"
+                                >
+                                  <button
+                                    class="close_btn btn btn-primary"
+                                    type="button"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>,
+                        }
+                      }
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={null}
+                      unmountOnExit={true}
+                    >
+                      <div
+                        aria-modal={true}
+                        className="fade modal show"
+                        onClick={[Function]}
+                        onMouseUp={[Function]}
+                        role="dialog"
+                        style={
+                          Object {
+                            "display": "block",
+                            "paddingLeft": undefined,
+                            "paddingRight": 0,
+                          }
+                        }
+                        tabIndex={-1}
+                      >
+                        <ModalDialog
+                          onMouseDown={[Function]}
+                        >
+                          <div
+                            className="modal-dialog"
+                            onMouseDown={[Function]}
+                          >
+                            <div
+                              className="modal-content"
+                            >
+                              <ModalHeader
+                                closeButton={true}
+                                closeLabel="Close"
+                              >
+                                <ForwardRef
+                                  className="modal-header"
+                                  closeButton={true}
+                                  closeLabel="Close"
+                                >
+                                  <div
+                                    className="modal-header"
+                                  >
+                                    <ModalTitle
+                                      className="title text-black"
+                                    >
+                                      <ForwardRef
+                                        className="title text-black modal-title"
+                                      >
+                                        <div
+                                          className="title text-black modal-title h4"
+                                        >
+                                          Edit User
+                                        </div>
+                                      </ForwardRef>
+                                    </ModalTitle>
+                                    <CloseButton
+                                      aria-label="Close"
+                                      onClick={[Function]}
+                                    >
+                                      <button
+                                        aria-label="Close"
+                                        className="btn-close"
+                                        onClick={[Function]}
+                                        type="button"
+                                      />
+                                    </CloseButton>
+                                  </div>
+                                </ForwardRef>
+                              </ModalHeader>
+                              <ModalBody>
+                                <div
+                                  className="modal-body"
+                                >
+                                  <EdituserForm
+                                    closeModal={[MockFunction]}
+                                    userData={
+                                      Object {
+                                        "email": "shivam@gmail.com",
+                                        "gender": "male",
+                                        "id": 0,
+                                        "name": "shivam sharma",
+                                        "status": "active",
+                                      }
+                                    }
+                                  >
+                                    <UserInfo
+                                      closeModal={[MockFunction]}
+                                      operation="edit"
+                                      userData={
+                                        Object {
+                                          "email": "shivam@gmail.com",
+                                          "gender": "male",
+                                          "id": 0,
+                                          "name": "shivam sharma",
+                                          "status": "active",
+                                        }
+                                      }
+                                    >
+                                      <div
+                                        className="userinfo_container"
+                                      >
+                                        <Form
+                                          className="form"
+                                          onSubmit={[Function]}
+                                          tag="form"
+                                        >
+                                          <form
+                                            className="form"
+                                            onSubmit={[Function]}
+                                          >
+                                            <FormGroup
+                                              tag="div"
+                                            >
+                                              <div
+                                                className="mb-3"
+                                              >
+                                                <div
+                                                  className="input input-group input-group-lg"
+                                                >
+                                                  <label
+                                                    className="userinfo_label"
+                                                  >
+                                                    Name :
+                                                  </label>
+                                                  <input
+                                                    aria-describedby="inputGroup-sizing-lg"
+                                                    aria-label="Sizing example input"
+                                                    autoComplete="off"
+                                                    className="username form-control my-2"
+                                                    name="name"
+                                                    onChange={[Function]}
+                                                    placeholder="Enter username here"
+                                                    required={true}
+                                                    type="text"
+                                                    value="shivam sharma"
+                                                  />
+                                                </div>
+                                                <div
+                                                  className="input input-group input-group-lg"
+                                                >
+                                                  <label
+                                                    className="userinfo_label"
+                                                  >
+                                                    Email :
+                                                  </label>
+                                                  <input
+                                                    aria-describedby="inputGroup-sizing-lg"
+                                                    aria-label="Sizing example input"
+                                                    autoComplete="off"
+                                                    className="email form-control my-2"
+                                                    name="email"
+                                                    onChange={[Function]}
+                                                    placeholder="Enter email id here"
+                                                    required={true}
+                                                    type="text"
+                                                    value="shivam@gmail.com"
+                                                  />
+                                                </div>
+                                                <div
+                                                  className="input input-group input-group-lg"
+                                                >
+                                                  <label
+                                                    className="userinfo_label"
+                                                  >
+                                                    Gender :
+                                                  </label>
+                                                  <select
+                                                    aria-label=".form-select-lg example"
+                                                    className="gender form-select form-select-lg mb-3"
+                                                    name="gender"
+                                                    onChange={[Function]}
+                                                    value="male"
+                                                  >
+                                                    <option
+                                                      value="male"
+                                                    >
+                                                      Male
+                                                    </option>
+                                                    <option
+                                                      value="female"
+                                                    >
+                                                      Female
+                                                    </option>
+                                                  </select>
+                                                </div>
+                                                <div
+                                                  className="input input-group input-group-lg"
+                                                >
+                                                  <label
+                                                    className="userinfo_label"
+                                                  >
+                                                    Status :
+                                                  </label>
+                                                  <select
+                                                    aria-label=".form-select-lg example"
+                                                    className="status form-select form-select-lg mb-3"
+                                                    name="status"
+                                                    onChange={[Function]}
+                                                    value="active"
+                                                  >
+                                                    <option
+                                                      value="active"
+                                                    >
+                                                      Active
+                                                    </option>
+                                                    <option
+                                                      value="inactive"
+                                                    >
+                                                      Inactive
+                                                    </option>
+                                                  </select>
+                                                </div>
+                                                <div
+                                                  className="d-flex"
+                                                >
+                                                  <Button
+                                                    className="userinfo_btn"
+                                                    color="success"
+                                                    tag="button"
+                                                    type="submit"
+                                                  >
+                                                    <button
+                                                      aria-label={null}
+                                                      className="userinfo_btn btn btn-success"
+                                                      onClick={[Function]}
+                                                      type="submit"
+                                                    >
+                                                      edit
+                                                       User
+                                                    </button>
+                                                  </Button>
+                                                  <Button
+                                                    className="reset_btn"
+                                                    color="primary"
+                                                    onClick={[Function]}
+                                                    tag="button"
+                                                  >
+                                                    <button
+                                                      aria-label={null}
+                                                      className="reset_btn btn btn-primary"
+                                                      onClick={[Function]}
+                                                      type="button"
+                                                    >
+                                                      Reset
+                                                    </button>
+                                                  </Button>
+                                                </div>
+                                              </div>
+                                            </FormGroup>
+                                          </form>
+                                        </Form>
+                                      </div>
+                                    </UserInfo>
+                                  </EdituserForm>
+                                </div>
+                              </ModalBody>
+                              <ModalFooter>
+                                <div
+                                  className="modal-footer"
+                                >
+                                  <Button
+                                    active={false}
+                                    className="close_btn"
+                                    disabled={false}
+                                    onClick={[MockFunction]}
+                                    variant="primary"
+                                  >
+                                    <button
+                                      className="close_btn btn btn-primary"
+                                      disabled={false}
+                                      onClick={[MockFunction]}
+                                      type="button"
+                                    >
+                                      Close
+                                    </button>
+                                  </Button>
+                                </div>
+                              </ModalFooter>
+                            </div>
+                          </div>
+                        </ModalDialog>
+                      </div>
+                    </Transition>
+                  </ForwardRef>
+                </Fade>
+              </DialogTransition>
+            </Portal>
+          </Modal>
+        </Modal>
+      </ModalTemplate>
+    </EditUser>
+  </Router>
+</BrowserRouter>
+`;

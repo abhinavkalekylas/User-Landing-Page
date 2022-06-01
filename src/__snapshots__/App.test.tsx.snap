@@ -1,121 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly App component 1`] = `
-<App>
+<Fragment>
   <BrowserRouter>
-    <Router
-      location={
-        Object {
-          "hash": "",
-          "key": "default",
-          "pathname": "/",
-          "search": "",
-          "state": null,
-        }
-      }
-      navigationType="POP"
-      navigator={
-        Object {
-          "action": "POP",
-          "back": [Function],
-          "block": [Function],
-          "createHref": [Function],
-          "forward": [Function],
-          "go": [Function],
-          "listen": [Function],
-          "location": Object {
-            "hash": "",
-            "key": "default",
-            "pathname": "/",
-            "search": "",
-            "state": null,
-          },
-          "push": [Function],
-          "replace": [Function],
-        }
-      }
+    <div
+      className="container"
     >
-      <div
-        className="container"
-      >
-        <Navbar>
-          <nav
-            className="navbar navbar-dark"
-          >
-            <a
-              className="navbar-brand "
-              href="/"
-            >
-              User Landing Page
-            </a>
-            <form
-              className="form-inline"
-            >
-              <select
-                aria-label=".form-select-lg example"
-                className="form-select form-select-lg"
-              >
-                <option
-                  value="none"
-                >
-                  None
-                </option>
-                <option
-                  value="active"
-                >
-                  Active
-                </option>
-                <option
-                  value="inactive"
-                >
-                  Inactive
-                </option>
-                <option
-                  value="male"
-                >
-                  Male
-                </option>
-                <option
-                  value="female"
-                >
-                  Female
-                </option>
-              </select>
-              <div
-                className="adduser"
-              >
-                <button
-                  className="btn btn-success btn-outline-light"
-                  color="success"
-                >
-                  Add User
-                </button>
-              </div>
-            </form>
-          </nav>
-        </Navbar>
-        <UserList>
-          <div
-            className="container"
-          >
-            <Loader>
-              <div
-                className="container loader"
-              >
-                <h2>
-                  Loading...  Please wait..
-                </h2>
-                <div
-                  aria-hidden="true"
-                  className="spinner-border ms-auto"
-                  role="status"
-                />
-              </div>
-            </Loader>
-          </div>
-        </UserList>
-      </div>
-    </Router>
+      <Navbar />
+      <UserList />
+      <ToastContainer
+        autoClose={5000}
+        closeButton={[Function]}
+        closeOnClick={true}
+        draggable={true}
+        draggableDirection="x"
+        draggablePercent={80}
+        hideProgressBar={false}
+        newestOnTop={false}
+        pauseOnFocusLoss={true}
+        pauseOnHover={true}
+        position="top-right"
+        role="alert"
+        rtl={false}
+        theme="light"
+        transition={[Function]}
+      />
+    </div>
   </BrowserRouter>
-</App>
+</Fragment>
 `;

@@ -113,15 +113,8 @@ it("put test", async () => {
   expect(mock.handlers.put[0][4]).toBe(user_data_after);
 });
 
-// Todo
 describe("Put test", () => {
   it("test put request test", () => {
-    //1. get user from props value
-    //2. simulate click
-    //3. then get user again by value
-    //or
-    // 3. use mock.onPut and check value
-
     console.log(wrapper.find("EdituserForm").props().userData);
     const initial_user = wrapper.find("EdituserForm").props().userData;
     console.log(wrapper.find(".status").debug()); //active

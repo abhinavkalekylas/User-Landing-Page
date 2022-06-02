@@ -90,7 +90,6 @@ it("renders correctly UserList component", () => {
 //   expect(toJson(wrapper)).toMatchSnapshot()
 // })
 
-//TODO
 it("On click edit user test", async () => {
   //call props boolean
   console.log(wrapper.debug());
@@ -98,9 +97,8 @@ it("On click edit user test", async () => {
   expect(expect(wrapper.find("EditUser").props().editUserModal).toBe(true));
 });
 
-//TODO
 it("On click view user test", () => {
   //call props boolean
-  wrapper.find(".btn_add").simulate("click");
+  wrapper.find(".view_btn").simulate("click");
   expect(expect(wrapper.find("ViewUser").props().viewUserModal).toBe(true));
 });

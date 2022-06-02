@@ -104,7 +104,7 @@ const UserList = () => {
                           setUpdateUser(user);
                         }}
                         color="info"
-                        className="view-button text-white"
+                        className="view_btn view-button text-white"
                       >
                         View User
                       </Button>

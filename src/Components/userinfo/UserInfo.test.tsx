@@ -27,6 +27,6 @@ beforeEach(() => {
 });
 
 // snapshot testing
-fit("renders correctly UserInfo component", () => {
+it("renders correctly UserInfo component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });

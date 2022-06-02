@@ -28,7 +28,7 @@ const UserInfo = ({
 
   useEffect(() => {
     setUserForm(userData);
-  }, []);
+  }, [userData]);
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     setUserForm({
@@ -91,7 +91,7 @@ const UserInfo = ({
           draggable: true,
           progress: undefined,
         });
-        console.log("Error while editing user ", error);
+        console.log(`Error while doing ${operation} user `, error);
       }
     }
   };

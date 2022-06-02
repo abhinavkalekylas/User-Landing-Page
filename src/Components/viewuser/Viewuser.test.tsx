@@ -1,6 +1,4 @@
-import userEvent from "@testing-library/user-event";
-import { screen, render } from "@testing-library/react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { GenderType, StatusType, User } from "../../modalfunction/Modal";
 import Viewuser from "./Viewuser";

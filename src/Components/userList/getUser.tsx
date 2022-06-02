@@ -1,7 +1,7 @@
 import axios from "axios";
 import { token } from "../../modalfunction/Modal";
 
-const putUser = async () => {
+const getUser = async () => {
   const res = await axios("https://gorest.co.in/public/v2/users", {
     method: "GET",
     headers: {
@@ -9,7 +9,7 @@ const putUser = async () => {
       Authorization: `Bearer ${token}`,
     },
   });
-  return res;
+  return res.data;
 };
 
-export default putUser;
+export default getUser;

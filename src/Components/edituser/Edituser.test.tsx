@@ -1,4 +1,4 @@
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GenderType, StatusType, User } from "../../modalfunction/Modal";
@@ -19,7 +19,7 @@ const props = {
   closeModal: jest.fn(),
 };
 beforeEach(() => {
-  wrapper = mount(
+  wrapper = shallow(
     <Router>
       <Edituser {...props} />
     </Router>

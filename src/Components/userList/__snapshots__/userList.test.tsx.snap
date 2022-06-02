@@ -4,8 +4,96 @@ exports[`renders correctly UserList component 1`] = `
 <div
   className="userlist_container"
 >
-  <h2>
-    This page is under develop. We will sure to give an update
-  </h2>
+  <table
+    className="table table-light"
+  >
+    <thead>
+      <tr>
+        <th
+          className="title_name"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          scope="col"
+        >
+          Email
+        </th>
+        <th
+          className="action"
+          scope="col"
+        >
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="table_row"
+        key="0"
+      >
+        <td
+          className="user_name"
+        />
+        <td
+          className="user_email"
+        />
+        <td
+          className="action_buttons"
+        >
+          <Button
+            className="view_btn view-button text-white"
+            color="info"
+            onClick={[Function]}
+            tag="button"
+          >
+            View User
+          </Button>
+          <Viewuser
+            closeModal={[Function]}
+            userData={
+              Object {
+                "email": "",
+                "gender": "male",
+                "id": 0,
+                "name": "",
+                "status": "active",
+              }
+            }
+            viewUserModal={false}
+          />
+          <Button
+            className="edit_btn edit-button"
+            color="primary"
+            onClick={[Function]}
+            tag="button"
+          >
+            Edit User
+          </Button>
+          <EditUser
+            closeModal={[Function]}
+            editUserModal={false}
+            userData={
+              Object {
+                "email": "",
+                "gender": "male",
+                "id": 0,
+                "name": "",
+                "status": "active",
+              }
+            }
+          />
+          <Button
+            className="delete-button"
+            color="danger"
+            tag="button"
+          >
+            Delete User
+          </Button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

@@ -44,7 +44,7 @@ const UserList = () => {
 
   const getAllUsers = async () => {
     try {
-      const data: [User] = await (await getUser()).data;
+      const data: [User] = await getUser();
 
       setLoad(false);
 

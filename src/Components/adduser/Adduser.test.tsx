@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import axios from "axios";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { GenderType, StatusType, User, token } from "../../modalfunction/Modal";
 import Adduser from "./Adduser";

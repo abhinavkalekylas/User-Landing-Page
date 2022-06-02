@@ -1,4 +1,4 @@
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { StatusType } from "../../modalfunction/Modal";
 import Navbar from "./Navbar";

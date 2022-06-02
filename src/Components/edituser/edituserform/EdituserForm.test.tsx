@@ -1,9 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import axios from "axios";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { wrap } from "module";
 import { BrowserRouter as Router } from "react-router-dom";
 import {
   GenderType,
@@ -92,42 +89,15 @@ it("test status select input", () => {
 });
 
 // Put request
-it("put test", async () => {
-  mock
-    .onGet("https://gorest.co.in/public/v2/users")
-    .reply(200, user_data_before, {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    });
-  // console.log(mock.handlers.get);
-  mock
-    .onPut("https://gorest.co.in/public/v2/users/")
-    .reply(200, user_data_after, {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    });
-  // console.log(mock.handlers.get);
-  // console.log(mock.handlers.put);
-  // console.log(mock.handlers.put[0][4]);
-
-  expect(mock.handlers.put[0][4]).toBe(user_data_after);
-});
-
 describe("Put test", () => {
   it("test put request test", () => {
-    console.log(wrapper.find("EdituserForm").props().userData);
     const initial_user = wrapper.find("EdituserForm").props().userData;
-    console.log(wrapper.find(".status").debug()); //active
 
-    console.log(initial_user);
     initial_user.status = StatusType.INACTIVE;
-    console.log(initial_user);
 
     wrapper.find(".status").simulate("change", {
       target: { name: "status", value: StatusType.INACTIVE },
     });
-    console.log(wrapper.debug());
-    console.log(wrapper.find(".status").debug());
 
     mock
       .onPut("https://gorest.co.in/public/v2/users/")

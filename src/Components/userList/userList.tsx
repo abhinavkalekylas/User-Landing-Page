@@ -11,7 +11,7 @@ import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
 import { toast } from "react-toastify";
-import getUser from "./getUser";
+import { getUser } from "../../apicall/service";
 
 const UserList = () => {
   const userData: User = {
@@ -52,15 +52,7 @@ const UserList = () => {
       setUsers(data);
     } catch (error) {
       setError(true);
-      toast.error("Error while getting all users", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.error("Error while getting all users");
       console.log("Error while getting all users ", error);
     }
   };

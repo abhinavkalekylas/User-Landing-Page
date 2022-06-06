@@ -9,8 +9,7 @@ import {
   User,
   validateEmail,
 } from "../../modalfunction/Modal";
-import postUser from "../adduser/postUser";
-import putUser from "../edituser/putUser";
+import { createUser, updateUser } from "../../apicall/service";
 
 const UserInfo = ({
   userData,
@@ -40,57 +39,25 @@ const UserInfo = ({
   const handleForm = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (userForm.name === "" || userForm.email === "") {
-      toast.warn("Please enter given field", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warn("Please enter given field");
       return;
     } else if (!validateEmail(userForm.email)) {
-      toast.warn("Invalid email entered", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      toast.warn("Invalid email entered");
       return;
     } else {
       try {
         operation === "add"
-          ? await postUser(userForm)
-          : await putUser(userForm);
+          ? await createUser(userForm)
+          : await updateUser(userForm);
 
-        toast.success(`User ${operation}`, {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.success(`User ${operation}`);
         closeModal();
         setTimeout(() => {
           navigate(0);
         }, 1500);
       } catch (error) {
         setError(true);
-        toast.error(`Error while doing ${operation} operation`, {
-          position: "top-right",
-          autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error(`Error while doing ${operation} operation`);
         console.log(`Error while doing ${operation} user `, error);
       }
     }

@@ -9,7 +9,7 @@ exports[`renders correctly App component 1`] = `
       <Navbar />
       <UserList />
       <ToastContainer
-        autoClose={5000}
+        autoClose={1500}
         closeButton={[Function]}
         closeOnClick={true}
         draggable={true}

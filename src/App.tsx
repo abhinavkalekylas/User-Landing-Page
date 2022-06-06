@@ -14,7 +14,14 @@ const App = () => {
         <div className="container">
           <Navbar />
           <UserList />
-          <ToastContainer />
+          <ToastContainer
+            position="top-right"
+            autoClose={1500}
+            hideProgressBar={false}
+            closeOnClick={true}
+            pauseOnHover={true}
+            draggable={true}
+          />
         </div>
       </Router>
     </>

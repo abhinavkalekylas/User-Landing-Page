@@ -12,6 +12,7 @@ import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
 import { toast } from "react-toastify";
 import { getUser } from "../../apicall/service";
+import Deleteuser from "../deleteuser/Deleteuser";
 
 const UserList = () => {
   const userData: User = {
@@ -29,17 +30,33 @@ const UserList = () => {
 
   const [viewUserModal, setViewUserModal] = useState(false);
   const [editUserModal, setEditUserModal] = useState(false);
+  const [deleteUserModal, setDeleteUserModal] = useState(false);
   const [updateUser, setUpdateUser] = useState(userData);
 
   const openModal = (modalType: number) => {
-    modalType === chooseModalType.viewModal
-      ? setViewUserModal(true)
-      : setEditUserModal(true);
+    // modalType === chooseModalType.view
+    //   ? setViewUserModal(true)
+    //   : setEditUserModal(true);
+
+    switch (modalType) {
+      case chooseModalType.view:
+        setViewUserModal(true);
+        break;
+      case chooseModalType.edit:
+        setEditUserModal(true);
+        break;
+      case chooseModalType.delete:
+        setDeleteUserModal(true);
+        break;
+      default:
+        return;
+    }
   };
 
   const closeModal = () => {
     setViewUserModal(false);
     setEditUserModal(false);
+    setDeleteUserModal(false);
   };
 
   const getAllUsers = async () => {
@@ -92,7 +109,7 @@ const UserList = () => {
                     <td className="action_buttons">
                       <Button
                         onClick={() => {
-                          openModal(chooseModalType.viewModal);
+                          openModal(chooseModalType.view);
                           setUpdateUser(user);
                         }}
                         color="info"
@@ -107,7 +124,7 @@ const UserList = () => {
                       />
                       <Button
                         onClick={() => {
-                          openModal(chooseModalType.editModal);
+                          openModal(chooseModalType.edit);
                           setUpdateUser(user);
                         }}
                         color="primary"
@@ -120,9 +137,21 @@ const UserList = () => {
                         editUserModal={editUserModal}
                         closeModal={closeModal}
                       />
-                      <Button color="danger" className="delete-button">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.delete);
+                          setUpdateUser(user);
+                        }}
+                        color="danger"
+                        className="delete_btn delete-button"
+                      >
                         Delete User
                       </Button>
+                      <Deleteuser
+                        userData={updateUser}
+                        deleteUserModal={deleteUserModal}
+                        closeModal={closeModal}
+                      />
                     </td>
                   </tr>
                 );

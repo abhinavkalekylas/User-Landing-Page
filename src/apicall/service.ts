@@ -34,3 +34,13 @@ export const getUser = async () => {
     return res.data;
 };
 
+export const deleteUser = async (user: User) => {
+  await axios(`https://gorest.co.in/public/v2/users/${user.id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+

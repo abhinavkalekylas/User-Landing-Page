@@ -8,22 +8,6 @@ import Navbar from "./Components/navbar/Navbar";
 import UserList from "./Components/userList/userList";
 
 it("renders correctly App component", () => {
-  var mock = new MockAdapter(axios);
-  const data = [
-    {
-      id: 3218,
-      name: "Harinarayan Abbott",
-      email: "abbott_harinarayan@collins.info",
-      gender: "male",
-      status: "inactive",
-    },
-  ];
-
-  mock.onGet("https://gorest.co.in/public/v2/users/").reply(200, data, {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  });
-
-  const wrapper = mount(<App />);
+  const wrapper = shallow(<App />);
   expect(toJson(wrapper)).toMatchSnapshot();
 });

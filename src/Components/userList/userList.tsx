@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
-import axios from "axios";
 import "./userList.scss";
-import { User, GenderType, StatusType, token } from "../../modalfunction/Modal";
+import {
+  User,
+  GenderType,
+  StatusType,
+  chooseModalType,
+} from "../../modalfunction/Modal";
 import Loader from "../loader/Loader";
 import Viewuser from "../viewuser/Viewuser";
+import Edituser from "../edituser/Edituser";
+import { toast } from "react-toastify";
+import { getUser } from "../../apicall/service";
 
 const UserList = () => {
   const userData: User = {
@@ -21,23 +28,23 @@ const UserList = () => {
   const [error, setError] = useState(false);
 
   const [viewUserModal, setViewUserModal] = useState(false);
+  const [editUserModal, setEditUserModal] = useState(false);
   const [updateUser, setUpdateUser] = useState(userData);
 
-  const closeModal = () => setViewUserModal(false);
-  const openModal = () => setViewUserModal(true);
+  const openModal = (modalType: number) => {
+    modalType === chooseModalType.viewModal
+      ? setViewUserModal(true)
+      : setEditUserModal(true);
+  };
+
+  const closeModal = () => {
+    setViewUserModal(false);
+    setEditUserModal(false);
+  };
 
   const getAllUsers = async () => {
     try {
-      const res = await axios("https://gorest.co.in/public/v2/users", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      // Contains all users data
-      const data: [User] = res.data;
+      const data: [User] = await getUser();
 
       setLoad(false);
 
@@ -45,6 +52,7 @@ const UserList = () => {
       setUsers(data);
     } catch (error) {
       setError(true);
+      toast.error("Error while getting all users");
       console.log("Error while getting all users ", error);
     }
   };
@@ -84,11 +92,11 @@ const UserList = () => {
                     <td className="action_buttons">
                       <Button
                         onClick={() => {
-                          openModal();
+                          openModal(chooseModalType.viewModal);
                           setUpdateUser(user);
                         }}
                         color="info"
-                        className="view-button text-white"
+                        className="view_btn view-button text-white"
                       >
                         View User
                       </Button>
@@ -97,9 +105,21 @@ const UserList = () => {
                         viewUserModal={viewUserModal}
                         closeModal={closeModal}
                       />
-                      <Button color="primary" className="edit-button">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.editModal);
+                          setUpdateUser(user);
+                        }}
+                        color="primary"
+                        className="edit_btn edit-button"
+                      >
                         Edit User
                       </Button>
+                      <Edituser
+                        userData={updateUser}
+                        editUserModal={editUserModal}
+                        closeModal={closeModal}
+                      />
                       <Button color="danger" className="delete-button">
                         Delete User
                       </Button>

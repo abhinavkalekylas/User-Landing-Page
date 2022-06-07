@@ -1,9 +1,9 @@
 $text-color: black; 
 
-.adduser_container {
+.userinfo_container {
     margin-top: 1rem;
 
-    .form, .adduser_label {
+    .form, .serinfo_label {
         color: $text-color;
     }
 
@@ -12,7 +12,7 @@ $text-color: black;
         flex-direction: row;
     }
 
-    .adduser_label {
+    .userinfo_label {
         font-size: 1.2rem;
         display: flex;
         justify-content: center;
@@ -20,7 +20,7 @@ $text-color: black;
         margin: 0.5rem;
     }
 
-    .btn_add, .reset_add {
+    .userinfo_btn, .reset_btn {
         height: 3rem;
         margin: 1rem 4rem;   
     }

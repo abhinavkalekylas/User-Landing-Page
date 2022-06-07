@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly Adduser component 1`] = `
+exports[`renders correctly EdituserForm component 1`] = `
 <BrowserRouter>
   <Router
     location={
@@ -34,18 +34,27 @@ exports[`renders correctly Adduser component 1`] = `
       }
     }
   >
-    <AddUser
+    <EdituserForm
       closeModal={[MockFunction]}
+      userData={
+        Object {
+          "email": "shivam@gmail.com",
+          "gender": "male",
+          "id": 0,
+          "name": "shivam sharma",
+          "status": "active",
+        }
+      }
     >
       <UserInfo
         closeModal={[MockFunction]}
-        operation="add"
+        operation="edit"
         userData={
           Object {
-            "email": "",
+            "email": "shivam@gmail.com",
             "gender": "male",
             "id": 0,
-            "name": "",
+            "name": "shivam sharma",
             "status": "active",
           }
         }
@@ -86,7 +95,7 @@ exports[`renders correctly Adduser component 1`] = `
                       placeholder="Enter username here"
                       required={true}
                       type="text"
-                      value=""
+                      value="shivam sharma"
                     />
                   </div>
                   <div
@@ -107,7 +116,7 @@ exports[`renders correctly Adduser component 1`] = `
                       placeholder="Enter email id here"
                       required={true}
                       type="text"
-                      value=""
+                      value="shivam@gmail.com"
                     />
                   </div>
                   <div
@@ -179,7 +188,7 @@ exports[`renders correctly Adduser component 1`] = `
                         onClick={[Function]}
                         type="submit"
                       >
-                        add
+                        edit
                          User
                       </button>
                     </Button>
@@ -205,7 +214,7 @@ exports[`renders correctly Adduser component 1`] = `
           </Form>
         </div>
       </UserInfo>
-    </AddUser>
+    </EdituserForm>
   </Router>
 </BrowserRouter>
 `;

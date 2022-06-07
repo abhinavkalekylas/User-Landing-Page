@@ -1,4 +1,4 @@
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { StatusType } from "../../modalfunction/Modal";
 import Navbar from "./Navbar";
@@ -6,6 +6,10 @@ import Navbar from "./Navbar";
 let wrapper: any;
 beforeEach(() => {
   wrapper = shallow(<Navbar />);
+});
+
+afterEach(() => {
+  jest.resetAllMocks();
 });
 
 it("check nav element", () => {
@@ -26,4 +30,10 @@ it("test filter select input", () => {
   expect(wrapper.find(".filter").props().children.at(1).props.value).toBe(
     StatusType.ACTIVE
   );
+});
+
+it("On click add user test", () => {
+  //call props boolean
+  wrapper.find(".btn_add").simulate("click");
+  expect(expect(wrapper.find("Modaldata").props().addUserModal).toBe(true));
 });

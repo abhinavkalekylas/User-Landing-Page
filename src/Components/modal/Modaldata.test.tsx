@@ -1,9 +1,6 @@
-import { shallow, mount } from "enzyme";
-import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Modaldata from "./Modaldata";
-import { Button } from "react-bootstrap";
-import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 let wrapper: any;
 beforeEach(() => {

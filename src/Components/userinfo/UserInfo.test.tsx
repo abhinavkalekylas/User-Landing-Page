@@ -1,7 +1,8 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import { GenderType, StatusType, User } from "../../modalfunction/Modal";
-import Viewuser from "./Viewuser";
+import UserInfo from "./UserInfo";
 
 const userData: User = {
   id: 0,
@@ -11,17 +12,21 @@ const userData: User = {
   status: StatusType.ACTIVE,
 };
 
+let wrapper: any;
 const props = {
   userData,
-  viewUserModal: true,
+  operation: "add",
   closeModal: jest.fn(),
 };
-
-let wrapper: any;
 beforeEach(() => {
-  wrapper = shallow(<Viewuser {...props} />);
+  wrapper = shallow(
+    <Router>
+      <UserInfo {...props} />
+    </Router>
+  );
 });
 
-it("renders correctly Viewuser component", () => {
+// snapshot testing
+it("renders correctly UserInfo component", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });

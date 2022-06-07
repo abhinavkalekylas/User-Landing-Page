@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import axios from "axios";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { GenderType, StatusType, User, token } from "../../modalfunction/Modal";
 import Adduser from "./Adduser";
@@ -15,7 +15,7 @@ beforeEach(() => {
   };
   wrapper = mount(
     <Router>
-      <Adduser {...props}></Adduser>
+      <Adduser {...props} />
     </Router>
   );
 });
@@ -72,15 +72,15 @@ it("post test", async () => {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
   });
-  const event1 = { target: { name: "email", value: "shivam@gmail.com" } };
-  wrapper.find(".email").simulate("change", event1);
+  const eventEmail = { target: { name: "email", value: "shivam@gmail.com" } };
+  wrapper.find(".email").simulate("change", eventEmail);
   expect(wrapper.find(".email").props().value).toEqual("shivam@gmail.com");
 
-  const event = { target: { name: "name", value: "shivam" } };
-  wrapper.find(".username").simulate("change", event);
+  const eventInput = { target: { name: "name", value: "shivam" } };
+  wrapper.find(".username").simulate("change", eventInput);
   expect(wrapper.find(".username").props().value).toEqual("shivam");
 
-  wrapper.find("Button.adduser_btn").simulate("click");
+  wrapper.find("Button.userinfo_btn").simulate("click");
 });
 
 // submit button

@@ -14,7 +14,16 @@ import { toast } from "react-toastify";
 import { getUser } from "../../apicall/service";
 import Deleteuser from "../deleteuser/Deleteuser";
 
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllUsers } from "../../redux/action/todo";
+
+// import { connect } from "react-redux";
+
 const UserList = () => {
+  const allUsers = useSelector((state: any) => state.allUserInfo.users);
+  console.log(allUsers);
+  const dispatch = useDispatch();
+
   const userData: User = {
     id: 0,
     name: "",
@@ -67,6 +76,9 @@ const UserList = () => {
 
       // Update users
       setUsers(data);
+
+      dispatch(fetchAllUsers(data));
+      // fetchAllUsers(data);
     } catch (error) {
       setError(true);
       toast.error("Error while getting all users");
@@ -101,7 +113,63 @@ const UserList = () => {
             <h1>List is empty</h1>
           ) : (
             <tbody>
-              {users.map((user) => {
+              {/* {users.map((user) => {
+                return (
+                  <tr className="table_row" key={String(user.id)}>
+                    <td className="user_name">{user.name}</td>
+                    <td className="user_email">{user.email}</td>
+                    <td className="action_buttons">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.view);
+                          setUpdateUser(user);
+                        }}
+                        color="info"
+                        className="view_btn view-button text-white"
+                      >
+                        View User
+                      </Button>
+                      <Viewuser
+                        userData={updateUser}
+                        viewUserModal={viewUserModal}
+                        closeModal={closeModal}
+                      />
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.edit);
+                          setUpdateUser(user);
+                        }}
+                        color="primary"
+                        className="edit_btn edit-button"
+                      >
+                        Edit User
+                      </Button>
+                      <Edituser
+                        userData={updateUser}
+                        editUserModal={editUserModal}
+                        closeModal={closeModal}
+                      />
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.delete);
+                          setUpdateUser(user);
+                        }}
+                        color="danger"
+                        className="delete_btn delete-button"
+                      >
+                        Delete User
+                      </Button>
+                      <Deleteuser
+                        userData={updateUser}
+                        deleteUserModal={deleteUserModal}
+                        closeModal={closeModal}
+                      />
+                    </td>
+                  </tr>
+                );
+              })} */}
+
+              {allUsers.map((user: any) => {
                 return (
                   <tr className="table_row" key={String(user.id)}>
                     <td className="user_name">{user.name}</td>
@@ -165,3 +233,15 @@ const UserList = () => {
 };
 
 export default UserList;
+
+// const mapStateToProps = (state: any) => ({
+//   allUsers: state.allUserInfo.users,
+// });
+
+// const mapDispatchToProps = (dispatch: any) => ({
+//   fetchAllUsers: (user: any) => {
+//     dispatch(fetchAllUsers(user));
+//   },
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(UserList);

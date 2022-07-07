@@ -11,6 +11,9 @@ import {
 } from "../../modalfunction/Modal";
 import { createUser, updateUser } from "../../apicall/service";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addUser, editUser } from "../../redux/action/todo";
+
 const UserInfo = ({
   userData,
   operation,
@@ -20,6 +23,10 @@ const UserInfo = ({
   operation: string;
   closeModal: () => void;
 }) => {
+  // const allUsers = useSelector((state: any) => state.allUserInfo.users);
+  // console.log(allUsers);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const [userForm, setUserForm] = useState(userData);
@@ -49,6 +56,10 @@ const UserInfo = ({
         operation === "add"
           ? await createUser(userForm)
           : await updateUser(userForm);
+
+        operation === "add"
+          ? dispatch(addUser(userForm))
+          : dispatch(editUser(userForm));
 
         toast.success(`User ${operation}`);
         closeModal();

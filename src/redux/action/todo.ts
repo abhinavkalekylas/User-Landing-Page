@@ -1,4 +1,4 @@
-import { ADD_USER, DELETE_USER, EDIT_USER, FETCH_ALLUSERS } from "./action-types";
+import { ADD_USER, DELETE_USER, EDIT_USER, FETCH_ALLUSERS, FILTER_USER } from "./action-types";
 
 export const fetchAllUsers = (users: any) => {
     return {
@@ -25,6 +25,13 @@ export const deleteUser = (user: any) => {
     return {
         type: DELETE_USER,
         payload: user
+    }
+}
+
+export const filterUser = (filterType: any) => {
+    return {
+        type: FILTER_USER,
+        payload: filterType
     }
 }
 

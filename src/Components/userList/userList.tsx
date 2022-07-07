@@ -21,8 +21,12 @@ import { fetchAllUsers } from "../../redux/action/todo";
 
 const UserList = () => {
   const allUsers = useSelector((state: any) => state.allUserInfo.users);
-  console.log(allUsers);
+  // console.log(allUsers);
   const dispatch = useDispatch();
+
+  //filter
+  const filterType = useSelector((state: any) => state.allUserInfo.filter);
+  console.log(filterType);
 
   const userData: User = {
     id: 0,
@@ -70,8 +74,8 @@ const UserList = () => {
 
   const getAllUsers = async () => {
     try {
-      const data: [User] = await getUser();
-
+      const data: [User] = await getUser(filterType);
+      console.log(data);
       setLoad(false);
 
       // Update users
@@ -88,7 +92,7 @@ const UserList = () => {
 
   useEffect(() => {
     getAllUsers();
-  }, []);
+  }, [filterType]);
 
   return (
     <div className="userlist_container">

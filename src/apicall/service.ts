@@ -23,8 +23,8 @@ export const updateUser = async (user: User) => {
     });
 };
 
-export const getUser = async () => {
-    const res = await axios("https://gorest.co.in/public/v2/users", {
+export const getUser = async (filterType: any) => {
+    const res = await axios(`https://gorest.co.in/public/v2/users/?gender=${filterType.selectedGender}&status=${filterType.selectedStatus}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

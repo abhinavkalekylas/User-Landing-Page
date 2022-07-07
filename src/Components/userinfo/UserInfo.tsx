@@ -23,8 +23,6 @@ const UserInfo = ({
   operation: string;
   closeModal: () => void;
 }) => {
-  // const allUsers = useSelector((state: any) => state.allUserInfo.users);
-  // console.log(allUsers);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();

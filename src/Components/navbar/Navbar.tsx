@@ -54,7 +54,7 @@ const Navbar = () => {
           aria-label=".form-select-lg example"
           onChange={handleChangeGender}
         >
-          <option value="none">None</option>
+          <option value="">None</option>
           <option value={GenderType.MALE}>Male</option>
           <option value={GenderType.FEMALE}>Female</option>
         </select>
@@ -63,7 +63,7 @@ const Navbar = () => {
           aria-label=".form-select-lg example"
           onChange={handleChangeStatus}
         >
-          <option value="none">None</option>
+          <option value="">None</option>
           <option value={StatusType.ACTIVE}>Active</option>
           <option value={StatusType.INACTIVE}>Inactive</option>
         </select>

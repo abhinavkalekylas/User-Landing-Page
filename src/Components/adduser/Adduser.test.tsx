@@ -6,6 +6,8 @@ import toJson from "enzyme-to-json";
 import { GenderType, StatusType, User, token } from "../../modalfunction/Modal";
 import Adduser from "./Adduser";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 var MockAdapter = require("axios-mock-adapter");
 let wrapper: any;
@@ -14,9 +16,11 @@ beforeEach(() => {
     closeModal: jest.fn(),
   };
   wrapper = mount(
+    <Provider store={store}>
     <Router>
       <Adduser {...props} />
     </Router>
+    </Provider>
   );
 });
 
@@ -86,9 +90,11 @@ it("post test", async () => {
 // submit button
 it("should be able to submit the form", () => {
   const component = render(
+    <Provider store={store}>
     <Router>
       <Adduser closeModal={jest.fn()} />
     </Router>
+    </Provider>
   );
   const email = screen.getByPlaceholderText("Enter email id here");
   const button = screen.getAllByRole("button");

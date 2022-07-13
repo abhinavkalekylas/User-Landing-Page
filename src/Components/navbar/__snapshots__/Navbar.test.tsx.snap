@@ -1,66 +1,191 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly App component 1`] = `
-<nav
-  className="navbar navbar-dark"
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <a
-    className="navbar-brand "
-    href="/"
-  >
-    User Landing Page
-  </a>
-  <form
-    className="nav_form form-inline"
-  >
-    <select
-      aria-label=".form-select-lg example"
-      className="filter form-select form-select-lg"
+  <BrowserRouter>
+    <Router
+      location={
+        Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        }
+      }
+      navigationType="POP"
+      navigator={
+        Object {
+          "action": "POP",
+          "back": [Function],
+          "block": [Function],
+          "createHref": [Function],
+          "forward": [Function],
+          "go": [Function],
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "default",
+            "pathname": "/",
+            "search": "",
+            "state": null,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
     >
-      <option
-        value="none"
-      >
-        None
-      </option>
-      <option
-        value="active"
-      >
-        Active
-      </option>
-      <option
-        value="inactive"
-      >
-        Inactive
-      </option>
-      <option
-        value="male"
-      >
-        Male
-      </option>
-      <option
-        value="female"
-      >
-        Female
-      </option>
-    </select>
-    <div
-      className="adduser"
-    >
-      <Button
-        active={false}
-        className="btn_add btn btn-success btn-outline-light"
-        color="success"
-        disabled={false}
-        onClick={[Function]}
-        variant="primary"
-      >
-        Add User
-      </Button>
-    </div>
-  </form>
-  <Modaldata
-    addUserModal={false}
-    closeModal={[Function]}
-  />
-</nav>
+      <Navbar>
+        <nav
+          className="navbar navbar-dark"
+        >
+          <a
+            className="navbar-brand "
+            href="/"
+          >
+            User Landing Page
+          </a>
+          <form
+            className="nav_form form-inline"
+          >
+            <span
+              className="filter_title"
+            >
+              Filter by:
+            </span>
+            <select
+              aria-label=".form-select-lg example"
+              className="filter form-select form-select-lg gender_select"
+              onChange={[Function]}
+            >
+              <option
+                value=""
+              >
+                None
+              </option>
+              <option
+                value="male"
+              >
+                Male
+              </option>
+              <option
+                value="female"
+              >
+                Female
+              </option>
+            </select>
+            <select
+              aria-label=".form-select-lg example"
+              className="filter form-select form-select-lg status_select"
+              onChange={[Function]}
+            >
+              <option
+                value=""
+              >
+                None
+              </option>
+              <option
+                value="active"
+              >
+                Active
+              </option>
+              <option
+                value="inactive"
+              >
+                Inactive
+              </option>
+            </select>
+            <div
+              className="adduser"
+            >
+              <Button
+                active={false}
+                className="btn_add btn btn-success btn-outline-light"
+                color="success"
+                disabled={false}
+                onClick={[Function]}
+                variant="primary"
+              >
+                <button
+                  className="btn_add btn btn-success btn-outline-light btn btn-primary"
+                  color="success"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Add User
+                </button>
+              </Button>
+            </div>
+          </form>
+          <Modaldata
+            addUserModal={false}
+            closeModal={[Function]}
+          >
+            <ModalTemplate
+              closeModal={[Function]}
+              title_name="Add User"
+              userModal={false}
+            >
+              <Modal
+                animation={true}
+                autoFocus={true}
+                backdrop={true}
+                dialogAs={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "displayName": "ModalDialog",
+                    "render": [Function],
+                  }
+                }
+                enforceFocus={true}
+                keyboard={true}
+                onHide={[Function]}
+                restoreFocus={true}
+                show={false}
+              >
+                <Modal
+                  autoFocus={true}
+                  backdrop={true}
+                  backdropTransition={[Function]}
+                  enforceFocus={true}
+                  keyboard={true}
+                  manager={
+                    BootstrapModalManager {
+                      "handleContainerOverflow": true,
+                      "isRTL": false,
+                      "modals": Array [],
+                      "ownerDocument": undefined,
+                    }
+                  }
+                  onEnter={[Function]}
+                  onEntering={[Function]}
+                  onEscapeKeyDown={[Function]}
+                  onExit={[Function]}
+                  onExited={[Function]}
+                  onHide={[Function]}
+                  renderBackdrop={[Function]}
+                  renderDialog={[Function]}
+                  restoreFocus={true}
+                  show={false}
+                  transition={[Function]}
+                />
+              </Modal>
+            </ModalTemplate>
+          </Modaldata>
+        </nav>
+      </Navbar>
+    </Router>
+  </BrowserRouter>
+</Provider>
 `;

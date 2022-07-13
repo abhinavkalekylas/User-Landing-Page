@@ -1,11 +1,14 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import {BrowserRouter as Router} from "react-router-dom"
 import toJson from "enzyme-to-json";
+import { Provider } from "react-redux";
 import { StatusType } from "../../modalfunction/Modal";
+import store from "../../redux/store";
 import Navbar from "./Navbar";
 
 let wrapper: any;
 beforeEach(() => {
-  wrapper = shallow(<Navbar />);
+  wrapper = mount(<Provider store={store}><Router><Navbar /></Router></Provider>);
 });
 
 afterEach(() => {
@@ -23,17 +26,19 @@ it("renders correctly App component", () => {
 
 // test for select tag for filter
 it("test filter select input", () => {
-  wrapper.find(".filter").simulate("change", {
+  wrapper.find(".filter").at(1).simulate("change", {
     target: { name: "status", value: StatusType.ACTIVE },
   });
   wrapper.update();
-  expect(wrapper.find(".filter").props().children.at(1).props.value).toBe(
+  expect(wrapper.find(".filter").at(1).props().children.at(1).props.value).toBe(
     StatusType.ACTIVE
   );
 });
 
 it("On click add user test", () => {
   //call props boolean
-  wrapper.find(".btn_add").simulate("click");
+  wrapper.find(".btn_add").at(0).simulate("click");
+
+  wrapper.find(".btn_add").at(0).simulate("click");
   expect(expect(wrapper.find("Modaldata").props().addUserModal).toBe(true));
 });

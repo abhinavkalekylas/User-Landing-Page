@@ -1,6 +1,7 @@
 import axios from "axios";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import {
   GenderType,
@@ -8,6 +9,7 @@ import {
   token,
   User,
 } from "../../../modalfunction/Modal";
+import store from "../../../redux/store";
 import EdituserForm from "./EdituserForm";
 
 var MockAdapter = require("axios-mock-adapter");
@@ -26,9 +28,11 @@ const props = {
 };
 beforeEach(() => {
   wrapper = mount(
+    <Provider store={store}>
     <Router>
       <EdituserForm {...props} />
     </Router>
+    </Provider>
   );
 });
 

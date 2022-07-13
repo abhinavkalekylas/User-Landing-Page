@@ -94,3 +94,9 @@ it("On click view user test", () => {
   wrapper.find(".view_btn").simulate("click");
   expect(wrapper.find("ViewUser").props().viewUserModal).toBe(true);
 });
+
+it("On click delete user test", () => {
+  //call props boolean
+  wrapper.find(".delete_btn").simulate("click");
+  expect(wrapper.find("DeleteUser").props().deleteUserModal).toBe(true);
+});

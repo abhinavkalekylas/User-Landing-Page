@@ -12,8 +12,22 @@ import Viewuser from "../viewuser/Viewuser";
 import Edituser from "../edituser/Edituser";
 import { toast } from "react-toastify";
 import { getUser } from "../../apicall/service";
+import Deleteuser from "../deleteuser/Deleteuser";
+
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllUsers } from "../../redux/action/todo";
+
+// import { connect } from "react-redux";
 
 const UserList = () => {
+  const allUsers = useSelector((state: any) => state.allUserInfo.users);
+  // console.log(allUsers);
+  const dispatch = useDispatch();
+
+  //filter
+  const filterType = useSelector((state: any) => state.allUserInfo.filter);
+  console.log(filterType);
+
   const userData: User = {
     id: 0,
     name: "",
@@ -29,27 +43,46 @@ const UserList = () => {
 
   const [viewUserModal, setViewUserModal] = useState(false);
   const [editUserModal, setEditUserModal] = useState(false);
+  const [deleteUserModal, setDeleteUserModal] = useState(false);
   const [updateUser, setUpdateUser] = useState(userData);
 
   const openModal = (modalType: number) => {
-    modalType === chooseModalType.viewModal
-      ? setViewUserModal(true)
-      : setEditUserModal(true);
+    // modalType === chooseModalType.view
+    //   ? setViewUserModal(true)
+    //   : setEditUserModal(true);
+
+    switch (modalType) {
+      case chooseModalType.view:
+        setViewUserModal(true);
+        break;
+      case chooseModalType.edit:
+        setEditUserModal(true);
+        break;
+      case chooseModalType.delete:
+        setDeleteUserModal(true);
+        break;
+      default:
+        return;
+    }
   };
 
   const closeModal = () => {
     setViewUserModal(false);
     setEditUserModal(false);
+    setDeleteUserModal(false);
   };
 
   const getAllUsers = async () => {
     try {
-      const data: [User] = await getUser();
-
+      const data: [User] = await getUser(filterType);
+      console.log(data);
       setLoad(false);
 
       // Update users
       setUsers(data);
+
+      dispatch(fetchAllUsers(data));
+      // fetchAllUsers(data);
     } catch (error) {
       setError(true);
       toast.error("Error while getting all users");
@@ -59,7 +92,7 @@ const UserList = () => {
 
   useEffect(() => {
     getAllUsers();
-  }, []);
+  }, [filterType]);
 
   return (
     <div className="userlist_container">
@@ -84,7 +117,7 @@ const UserList = () => {
             <h1>List is empty</h1>
           ) : (
             <tbody>
-              {users.map((user) => {
+              {/* {users.map((user) => {
                 return (
                   <tr className="table_row" key={String(user.id)}>
                     <td className="user_name">{user.name}</td>
@@ -92,7 +125,7 @@ const UserList = () => {
                     <td className="action_buttons">
                       <Button
                         onClick={() => {
-                          openModal(chooseModalType.viewModal);
+                          openModal(chooseModalType.view);
                           setUpdateUser(user);
                         }}
                         color="info"
@@ -107,7 +140,7 @@ const UserList = () => {
                       />
                       <Button
                         onClick={() => {
-                          openModal(chooseModalType.editModal);
+                          openModal(chooseModalType.edit);
                           setUpdateUser(user);
                         }}
                         color="primary"
@@ -120,9 +153,77 @@ const UserList = () => {
                         editUserModal={editUserModal}
                         closeModal={closeModal}
                       />
-                      <Button color="danger" className="delete-button">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.delete);
+                          setUpdateUser(user);
+                        }}
+                        color="danger"
+                        className="delete_btn delete-button"
+                      >
                         Delete User
                       </Button>
+                      <Deleteuser
+                        userData={updateUser}
+                        deleteUserModal={deleteUserModal}
+                        closeModal={closeModal}
+                      />
+                    </td>
+                  </tr>
+                );
+              })} */}
+
+              {allUsers.map((user: any) => {
+                return (
+                  <tr className="table_row" key={String(user.id)}>
+                    <td className="user_name">{user.name}</td>
+                    <td className="user_email">{user.email}</td>
+                    <td className="action_buttons">
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.view);
+                          setUpdateUser(user);
+                        }}
+                        color="info"
+                        className="view_btn view-button text-white"
+                      >
+                        View User
+                      </Button>
+                      <Viewuser
+                        userData={updateUser}
+                        viewUserModal={viewUserModal}
+                        closeModal={closeModal}
+                      />
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.edit);
+                          setUpdateUser(user);
+                        }}
+                        color="primary"
+                        className="edit_btn edit-button"
+                      >
+                        Edit User
+                      </Button>
+                      <Edituser
+                        userData={updateUser}
+                        editUserModal={editUserModal}
+                        closeModal={closeModal}
+                      />
+                      <Button
+                        onClick={() => {
+                          openModal(chooseModalType.delete);
+                          setUpdateUser(user);
+                        }}
+                        color="danger"
+                        className="delete_btn delete-button"
+                      >
+                        Delete User
+                      </Button>
+                      <Deleteuser
+                        userData={updateUser}
+                        deleteUserModal={deleteUserModal}
+                        closeModal={closeModal}
+                      />
                     </td>
                   </tr>
                 );
@@ -136,3 +237,15 @@ const UserList = () => {
 };
 
 export default UserList;
+
+// const mapStateToProps = (state: any) => ({
+//   allUsers: state.allUserInfo.users,
+// });
+
+// const mapDispatchToProps = (dispatch: any) => ({
+//   fetchAllUsers: (user: any) => {
+//     dispatch(fetchAllUsers(user));
+//   },
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(UserList);

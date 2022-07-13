@@ -1,0 +1,605 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Deleteuser component 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      location={
+        Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        }
+      }
+      navigationType="POP"
+      navigator={
+        Object {
+          "action": "POP",
+          "back": [Function],
+          "block": [Function],
+          "createHref": [Function],
+          "forward": [Function],
+          "go": [Function],
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "default",
+            "pathname": "/",
+            "search": "",
+            "state": null,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <DeleteUser
+        closeModal={[MockFunction]}
+        deleteUserModal={true}
+        userData={
+          Object {
+            "email": "shivam@gmail.com",
+            "gender": "male",
+            "id": 0,
+            "name": "shivam sharma",
+            "status": "active",
+          }
+        }
+      >
+        <ModalTemplate
+          closeModal={[MockFunction]}
+          title_name="Delete User"
+          userModal={true}
+        >
+          <Modal
+            animation={true}
+            autoFocus={true}
+            backdrop={true}
+            dialogAs={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "displayName": "ModalDialog",
+                "render": [Function],
+              }
+            }
+            enforceFocus={true}
+            keyboard={true}
+            onHide={[MockFunction]}
+            restoreFocus={true}
+            show={true}
+          >
+            <Modal
+              autoFocus={true}
+              backdrop={true}
+              backdropTransition={[Function]}
+              enforceFocus={true}
+              keyboard={true}
+              manager={
+                BootstrapModalManager {
+                  "handleContainerOverflow": true,
+                  "isRTL": false,
+                  "modals": Array [
+                    Object {
+                      "add": [Function],
+                      "backdrop": <div
+                        class="fade modal-backdrop show"
+                      />,
+                      "dialog": <div
+                        aria-modal="true"
+                        class="fade modal show"
+                        role="dialog"
+                        style="display: block; padding-right: 0px;"
+                        tabindex="-1"
+                      >
+                        <div
+                          class="modal-dialog"
+                        >
+                          <div
+                            class="modal-content"
+                          >
+                            <div
+                              class="modal-header"
+                            >
+                              <div
+                                class="title text-black modal-title h4"
+                              >
+                                Delete User
+                              </div>
+                              <button
+                                aria-label="Close"
+                                class="btn-close"
+                                type="button"
+                              />
+                            </div>
+                            <div
+                              class="modal-body"
+                            >
+                              <div
+                                class="deleteuser_container"
+                              >
+                                <p
+                                  class="delete_message"
+                                >
+                                  Are you sure to delete this user with id: 
+                                  0
+                                   & name:
+                                   
+                                  shivam sharma
+                                </p>
+                                <button
+                                  class="deleteuser_btn btn btn-danger"
+                                  type="button"
+                                >
+                                  delete user
+                                </button>
+                                <button
+                                  class="cancel_btn btn btn-primary"
+                                  type="button"
+                                >
+                                  cancel
+                                </button>
+                              </div>
+                            </div>
+                            <div
+                              class="modal-footer"
+                            >
+                              <button
+                                class="close_btn btn btn-primary"
+                                type="button"
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>,
+                      "isTopModal": [Function],
+                      "remove": [Function],
+                      "setBackdropRef": [Function],
+                      "setDialogRef": [Function],
+                    },
+                  ],
+                  "ownerDocument": undefined,
+                  "state": Object {
+                    "scrollBarWidth": 1024,
+                    "style": Object {
+                      "overflow": "",
+                      "paddingRight": "",
+                    },
+                  },
+                }
+              }
+              onEnter={[Function]}
+              onEntering={[Function]}
+              onEscapeKeyDown={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onHide={[MockFunction]}
+              renderBackdrop={[Function]}
+              renderDialog={[Function]}
+              restoreFocus={true}
+              show={true}
+              transition={[Function]}
+            >
+              <Portal
+                containerInfo={
+                  <body
+                    class="modal-open"
+                    data-rr-ui-modal-open=""
+                    style="padding-right: 1024px;"
+                  >
+                    <div
+                      class="fade modal-backdrop show"
+                    />
+                    <div
+                      aria-modal="true"
+                      class="fade modal show"
+                      role="dialog"
+                      style="display: block; padding-right: 0px;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="modal-dialog"
+                      >
+                        <div
+                          class="modal-content"
+                        >
+                          <div
+                            class="modal-header"
+                          >
+                            <div
+                              class="title text-black modal-title h4"
+                            >
+                              Delete User
+                            </div>
+                            <button
+                              aria-label="Close"
+                              class="btn-close"
+                              type="button"
+                            />
+                          </div>
+                          <div
+                            class="modal-body"
+                          >
+                            <div
+                              class="deleteuser_container"
+                            >
+                              <p
+                                class="delete_message"
+                              >
+                                Are you sure to delete this user with id: 
+                                0
+                                 & name:
+                                 
+                                shivam sharma
+                              </p>
+                              <button
+                                class="deleteuser_btn btn btn-danger"
+                                type="button"
+                              >
+                                delete user
+                              </button>
+                              <button
+                                class="cancel_btn btn btn-primary"
+                                type="button"
+                              >
+                                cancel
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="modal-footer"
+                          >
+                            <button
+                              class="close_btn btn btn-primary"
+                              type="button"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </body>
+                }
+              >
+                <BackdropTransition
+                  appear={true}
+                  in={true}
+                >
+                  <Fade
+                    appear={true}
+                    in={true}
+                    mountOnEnter={false}
+                    timeout={null}
+                    unmountOnExit={false}
+                  >
+                    <ForwardRef
+                      addEndListener={[Function]}
+                      appear={true}
+                      childRef={[Function]}
+                      in={true}
+                      mountOnEnter={false}
+                      onEnter={[Function]}
+                      timeout={null}
+                      unmountOnExit={false}
+                    >
+                      <Transition
+                        addEndListener={[Function]}
+                        appear={true}
+                        enter={true}
+                        exit={true}
+                        in={true}
+                        mountOnEnter={false}
+                        nodeRef={
+                          Object {
+                            "current": <div
+                              class="fade modal-backdrop show"
+                            />,
+                          }
+                        }
+                        onEnter={[Function]}
+                        onEntered={[Function]}
+                        onEntering={[Function]}
+                        onExit={[Function]}
+                        onExited={[Function]}
+                        onExiting={[Function]}
+                        timeout={null}
+                        unmountOnExit={false}
+                      >
+                        <div
+                          className="fade modal-backdrop show"
+                          onClick={[Function]}
+                        />
+                      </Transition>
+                    </ForwardRef>
+                  </Fade>
+                </BackdropTransition>
+                <DialogTransition
+                  appear={true}
+                  in={true}
+                  onEnter={[Function]}
+                  onEntering={[Function]}
+                  onExit={[Function]}
+                  onExited={[Function]}
+                  unmountOnExit={true}
+                >
+                  <Fade
+                    appear={true}
+                    in={true}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    timeout={null}
+                    unmountOnExit={true}
+                  >
+                    <ForwardRef
+                      addEndListener={[Function]}
+                      appear={true}
+                      childRef={[Function]}
+                      in={true}
+                      mountOnEnter={false}
+                      onEnter={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      timeout={null}
+                      unmountOnExit={true}
+                    >
+                      <Transition
+                        addEndListener={[Function]}
+                        appear={true}
+                        enter={true}
+                        exit={true}
+                        in={true}
+                        mountOnEnter={false}
+                        nodeRef={
+                          Object {
+                            "current": <div
+                              aria-modal="true"
+                              class="fade modal show"
+                              role="dialog"
+                              style="display: block; padding-right: 0px;"
+                              tabindex="-1"
+                            >
+                              <div
+                                class="modal-dialog"
+                              >
+                                <div
+                                  class="modal-content"
+                                >
+                                  <div
+                                    class="modal-header"
+                                  >
+                                    <div
+                                      class="title text-black modal-title h4"
+                                    >
+                                      Delete User
+                                    </div>
+                                    <button
+                                      aria-label="Close"
+                                      class="btn-close"
+                                      type="button"
+                                    />
+                                  </div>
+                                  <div
+                                    class="modal-body"
+                                  >
+                                    <div
+                                      class="deleteuser_container"
+                                    >
+                                      <p
+                                        class="delete_message"
+                                      >
+                                        Are you sure to delete this user with id: 
+                                        0
+                                         & name:
+                                         
+                                        shivam sharma
+                                      </p>
+                                      <button
+                                        class="deleteuser_btn btn btn-danger"
+                                        type="button"
+                                      >
+                                        delete user
+                                      </button>
+                                      <button
+                                        class="cancel_btn btn btn-primary"
+                                        type="button"
+                                      >
+                                        cancel
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="modal-footer"
+                                  >
+                                    <button
+                                      class="close_btn btn btn-primary"
+                                      type="button"
+                                    >
+                                      Close
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
+                        onEnter={[Function]}
+                        onEntered={[Function]}
+                        onEntering={[Function]}
+                        onExit={[Function]}
+                        onExited={[Function]}
+                        onExiting={[Function]}
+                        timeout={null}
+                        unmountOnExit={true}
+                      >
+                        <div
+                          aria-modal={true}
+                          className="fade modal show"
+                          onClick={[Function]}
+                          onMouseUp={[Function]}
+                          role="dialog"
+                          style={
+                            Object {
+                              "display": "block",
+                              "paddingLeft": undefined,
+                              "paddingRight": 0,
+                            }
+                          }
+                          tabIndex={-1}
+                        >
+                          <ModalDialog
+                            onMouseDown={[Function]}
+                          >
+                            <div
+                              className="modal-dialog"
+                              onMouseDown={[Function]}
+                            >
+                              <div
+                                className="modal-content"
+                              >
+                                <ModalHeader
+                                  closeButton={true}
+                                  closeLabel="Close"
+                                >
+                                  <ForwardRef
+                                    className="modal-header"
+                                    closeButton={true}
+                                    closeLabel="Close"
+                                  >
+                                    <div
+                                      className="modal-header"
+                                    >
+                                      <ModalTitle
+                                        className="title text-black"
+                                      >
+                                        <ForwardRef
+                                          className="title text-black modal-title"
+                                        >
+                                          <div
+                                            className="title text-black modal-title h4"
+                                          >
+                                            Delete User
+                                          </div>
+                                        </ForwardRef>
+                                      </ModalTitle>
+                                      <CloseButton
+                                        aria-label="Close"
+                                        onClick={[Function]}
+                                      >
+                                        <button
+                                          aria-label="Close"
+                                          className="btn-close"
+                                          onClick={[Function]}
+                                          type="button"
+                                        />
+                                      </CloseButton>
+                                    </div>
+                                  </ForwardRef>
+                                </ModalHeader>
+                                <ModalBody>
+                                  <div
+                                    className="modal-body"
+                                  >
+                                    <div
+                                      className="deleteuser_container"
+                                    >
+                                      <p
+                                        className="delete_message"
+                                      >
+                                        Are you sure to delete this user with id: 
+                                        0
+                                         & name:
+                                         
+                                        shivam sharma
+                                      </p>
+                                      <Button
+                                        active={false}
+                                        className="deleteuser_btn"
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        variant="danger"
+                                      >
+                                        <button
+                                          className="deleteuser_btn btn btn-danger"
+                                          disabled={false}
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          delete user
+                                        </button>
+                                      </Button>
+                                      <Button
+                                        active={false}
+                                        className="cancel_btn"
+                                        disabled={false}
+                                        onClick={[MockFunction]}
+                                        variant="primary"
+                                      >
+                                        <button
+                                          className="cancel_btn btn btn-primary"
+                                          disabled={false}
+                                          onClick={[MockFunction]}
+                                          type="button"
+                                        >
+                                          cancel
+                                        </button>
+                                      </Button>
+                                    </div>
+                                  </div>
+                                </ModalBody>
+                                <ModalFooter>
+                                  <div
+                                    className="modal-footer"
+                                  >
+                                    <Button
+                                      active={false}
+                                      className="close_btn"
+                                      disabled={false}
+                                      onClick={[MockFunction]}
+                                      variant="primary"
+                                    >
+                                      <button
+                                        className="close_btn btn btn-primary"
+                                        disabled={false}
+                                        onClick={[MockFunction]}
+                                        type="button"
+                                      >
+                                        Close
+                                      </button>
+                                    </Button>
+                                  </div>
+                                </ModalFooter>
+                              </div>
+                            </div>
+                          </ModalDialog>
+                        </div>
+                      </Transition>
+                    </ForwardRef>
+                  </Fade>
+                </DialogTransition>
+              </Portal>
+            </Modal>
+          </Modal>
+        </ModalTemplate>
+      </DeleteUser>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

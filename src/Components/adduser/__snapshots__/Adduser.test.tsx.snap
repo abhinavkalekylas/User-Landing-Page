@@ -1,211 +1,223 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly Adduser component 1`] = `
-<BrowserRouter>
-  <Router
-    location={
-      Object {
-        "hash": "",
-        "key": "default",
-        "pathname": "/",
-        "search": "",
-        "state": null,
-      }
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
     }
-    navigationType="POP"
-    navigator={
-      Object {
-        "action": "POP",
-        "back": [Function],
-        "block": [Function],
-        "createHref": [Function],
-        "forward": [Function],
-        "go": [Function],
-        "listen": [Function],
-        "location": Object {
+  }
+>
+  <BrowserRouter>
+    <Router
+      location={
+        Object {
           "hash": "",
           "key": "default",
           "pathname": "/",
           "search": "",
           "state": null,
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <AddUser
-      closeModal={[MockFunction]}
-    >
-      <UserInfo
-        closeModal={[MockFunction]}
-        operation="add"
-        userData={
-          Object {
-            "email": "",
-            "gender": "male",
-            "id": 0,
-            "name": "",
-            "status": "active",
-          }
         }
+      }
+      navigationType="POP"
+      navigator={
+        Object {
+          "action": "POP",
+          "back": [Function],
+          "block": [Function],
+          "createHref": [Function],
+          "forward": [Function],
+          "go": [Function],
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "default",
+            "pathname": "/",
+            "search": "",
+            "state": null,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <AddUser
+        closeModal={[MockFunction]}
       >
-        <div
-          className="userinfo_container"
+        <UserInfo
+          closeModal={[MockFunction]}
+          operation="add"
+          userData={
+            Object {
+              "email": "",
+              "gender": "male",
+              "id": 0,
+              "name": "",
+              "status": "active",
+            }
+          }
         >
-          <Form
-            className="form"
-            onSubmit={[Function]}
-            tag="form"
+          <div
+            className="userinfo_container"
           >
-            <form
+            <Form
               className="form"
               onSubmit={[Function]}
+              tag="form"
             >
-              <FormGroup
-                tag="div"
+              <form
+                className="form"
+                onSubmit={[Function]}
               >
-                <div
-                  className="mb-3"
+                <FormGroup
+                  tag="div"
                 >
                   <div
-                    className="input input-group input-group-lg"
+                    className="mb-3"
                   >
-                    <label
-                      className="userinfo_label"
+                    <div
+                      className="input input-group input-group-lg"
                     >
-                      Name :
-                    </label>
-                    <input
-                      aria-describedby="inputGroup-sizing-lg"
-                      aria-label="Sizing example input"
-                      autoComplete="off"
-                      className="username form-control my-2"
-                      name="name"
-                      onChange={[Function]}
-                      placeholder="Enter username here"
-                      required={true}
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                  <div
-                    className="input input-group input-group-lg"
-                  >
-                    <label
-                      className="userinfo_label"
+                      <label
+                        className="userinfo_label"
+                      >
+                        Name :
+                      </label>
+                      <input
+                        aria-describedby="inputGroup-sizing-lg"
+                        aria-label="Sizing example input"
+                        autoComplete="off"
+                        className="username form-control my-2"
+                        name="name"
+                        onChange={[Function]}
+                        placeholder="Enter username here"
+                        required={true}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="input input-group input-group-lg"
                     >
-                      Email :
-                    </label>
-                    <input
-                      aria-describedby="inputGroup-sizing-lg"
-                      aria-label="Sizing example input"
-                      autoComplete="off"
-                      className="email form-control my-2"
-                      name="email"
-                      onChange={[Function]}
-                      placeholder="Enter email id here"
-                      required={true}
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                  <div
-                    className="input input-group input-group-lg"
-                  >
-                    <label
-                      className="userinfo_label"
+                      <label
+                        className="userinfo_label"
+                      >
+                        Email :
+                      </label>
+                      <input
+                        aria-describedby="inputGroup-sizing-lg"
+                        aria-label="Sizing example input"
+                        autoComplete="off"
+                        className="email form-control my-2"
+                        name="email"
+                        onChange={[Function]}
+                        placeholder="Enter email id here"
+                        required={true}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                    <div
+                      className="input input-group input-group-lg"
                     >
-                      Gender :
-                    </label>
-                    <select
-                      aria-label=".form-select-lg example"
-                      className="gender form-select form-select-lg mb-3"
-                      name="gender"
-                      onChange={[Function]}
-                      value="male"
-                    >
-                      <option
+                      <label
+                        className="userinfo_label"
+                      >
+                        Gender :
+                      </label>
+                      <select
+                        aria-label=".form-select-lg example"
+                        className="gender form-select form-select-lg mb-3"
+                        name="gender"
+                        onChange={[Function]}
                         value="male"
                       >
-                        Male
-                      </option>
-                      <option
-                        value="female"
+                        <option
+                          value="male"
+                        >
+                          Male
+                        </option>
+                        <option
+                          value="female"
+                        >
+                          Female
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      className="input input-group input-group-lg"
+                    >
+                      <label
+                        className="userinfo_label"
                       >
-                        Female
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    className="input input-group input-group-lg"
-                  >
-                    <label
-                      className="userinfo_label"
-                    >
-                      Status :
-                    </label>
-                    <select
-                      aria-label=".form-select-lg example"
-                      className="status form-select form-select-lg mb-3"
-                      name="status"
-                      onChange={[Function]}
-                      value="active"
-                    >
-                      <option
+                        Status :
+                      </label>
+                      <select
+                        aria-label=".form-select-lg example"
+                        className="status form-select form-select-lg mb-3"
+                        name="status"
+                        onChange={[Function]}
                         value="active"
                       >
-                        Active
-                      </option>
-                      <option
-                        value="inactive"
-                      >
-                        Inactive
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    className="d-flex"
-                  >
-                    <Button
-                      className="userinfo_btn"
-                      color="success"
-                      tag="button"
-                      type="submit"
+                        <option
+                          value="active"
+                        >
+                          Active
+                        </option>
+                        <option
+                          value="inactive"
+                        >
+                          Inactive
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      className="d-flex"
                     >
-                      <button
-                        aria-label={null}
-                        className="userinfo_btn btn btn-success"
-                        onClick={[Function]}
+                      <Button
+                        className="userinfo_btn"
+                        color="success"
+                        tag="button"
                         type="submit"
                       >
-                        add
-                         User
-                      </button>
-                    </Button>
-                    <Button
-                      className="reset_btn"
-                      color="primary"
-                      onClick={[Function]}
-                      tag="button"
-                    >
-                      <button
-                        aria-label={null}
-                        className="reset_btn btn btn-primary"
+                        <button
+                          aria-label={null}
+                          className="userinfo_btn btn btn-success"
+                          onClick={[Function]}
+                          type="submit"
+                        >
+                          add
+                           User
+                        </button>
+                      </Button>
+                      <Button
+                        className="reset_btn"
+                        color="primary"
                         onClick={[Function]}
-                        type="button"
+                        tag="button"
                       >
-                        Reset
-                      </button>
-                    </Button>
+                        <button
+                          aria-label={null}
+                          className="reset_btn btn btn-primary"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Reset
+                        </button>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </FormGroup>
-            </form>
-          </Form>
-        </div>
-      </UserInfo>
-    </AddUser>
-  </Router>
-</BrowserRouter>
+                </FormGroup>
+              </form>
+            </Form>
+          </div>
+        </UserInfo>
+      </AddUser>
+    </Router>
+  </BrowserRouter>
+</Provider>
 `;
